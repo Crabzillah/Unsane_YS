@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Core.Runtime", "Unity.RenderPipelines.Core.Runtime.csproj", "{52E78320-DFEF-2C8F-8A8B-BAA4AA3C66E6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.csproj", "{E621E72F-8FB8-CE2F-C953-0F3EA4B0B268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Core.Runtime", "Unity.RenderPipelines.Core.Runtime.csproj", "{52E78320-DFEF-2C8F-8A8B-BAA4AA3C66E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Universal.Runtime", "Unity.RenderPipelines.Universal.Runtime.csproj", "{2B3EA0F8-EC14-5168-C518-BF12763462E1}"
 EndProject
@@ -37,14 +37,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{52E78320-DFEF-2C8F-8A8B-BAA4AA3C66E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52E78320-DFEF-2C8F-8A8B-BAA4AA3C66E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52E78320-DFEF-2C8F-8A8B-BAA4AA3C66E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52E78320-DFEF-2C8F-8A8B-BAA4AA3C66E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E621E72F-8FB8-CE2F-C953-0F3EA4B0B268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E621E72F-8FB8-CE2F-C953-0F3EA4B0B268}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E621E72F-8FB8-CE2F-C953-0F3EA4B0B268}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E621E72F-8FB8-CE2F-C953-0F3EA4B0B268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E78320-DFEF-2C8F-8A8B-BAA4AA3C66E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E78320-DFEF-2C8F-8A8B-BAA4AA3C66E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E78320-DFEF-2C8F-8A8B-BAA4AA3C66E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E78320-DFEF-2C8F-8A8B-BAA4AA3C66E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2B3EA0F8-EC14-5168-C518-BF12763462E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2B3EA0F8-EC14-5168-C518-BF12763462E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B3EA0F8-EC14-5168-C518-BF12763462E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
