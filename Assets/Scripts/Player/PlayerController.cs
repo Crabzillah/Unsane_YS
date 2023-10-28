@@ -8,6 +8,10 @@ public class PlayerController : MonoBehaviour
 
     public Interactable focus;
 
+    //public Collider playerCollider;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,10 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
+
+
+
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -65,6 +73,35 @@ public class PlayerController : MonoBehaviour
 
 
 
+    }
+
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.layer == 10)
+        {
+            Interactable interactable = collision.GetComponent<Interactable>();
+
+            if (interactable != null)
+            {
+                SetFocus(interactable);
+                Debug.Log("FocusSetAutomatically");
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.layer == 10)
+        {
+            Interactable interactable = collision.GetComponent<Interactable>();
+
+            if (interactable != null)
+            {
+                RemoveFocus();
+                Debug.Log("FocusRemovedAutomatically");
+            }
+        }
     }
 
     void SetFocus(Interactable newFocus)

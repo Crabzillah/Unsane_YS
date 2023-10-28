@@ -7,6 +7,8 @@ public class Interactable : MonoBehaviour
     public float radius = 3f; // how close player needs to get to the object in order to interact with it
     public Transform interactionTransform; // Transform from where we interact
 
+    public GameObject pickUpIndicator;
+
     public bool isFocus = false; //Is this interactable currently being focused?
     public Transform player; // reference to the player transform
 
@@ -31,15 +33,19 @@ public class Interactable : MonoBehaviour
         if (isFocus && !hasInteracted)
         {
             Debug.Log("focused!, not interacted yet");
-            //if we are close enough
-            float distance = Vector3.Distance(player.position, interactionTransform.position); //ep02, 13:50
-            //check if player is inside the radius of interactable
-            if (distance <= radius)
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                Debug.Log("INTERACTION DONE");
-                Interact();
-                hasInteracted = true;
+                //if we are close enough
+                float distance = Vector3.Distance(player.position, interactionTransform.position); //ep02, 13:50
+                                                                                                   //check if player is inside the radius of interactable
+                if (distance <= radius)
+                {
+                    Debug.Log("INTERACTION DONE");
+                    Interact();
+                    hasInteracted = true;
+                }
             }
+
         }
     }
 
@@ -50,6 +56,7 @@ public class Interactable : MonoBehaviour
         isFocus = true;
         player = playerTransform;
         hasInteracted = false;
+        pickUpIndicator.SetActive(true);
     }
 
     public void OnDefocused()
@@ -57,6 +64,7 @@ public class Interactable : MonoBehaviour
         isFocus = false;
         player = null;
         hasInteracted = false;
+        pickUpIndicator.SetActive(false);
     }
 
     // draw our radius in the editor and set interaction transform of ourself in it's not assigned
