@@ -30,46 +30,46 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(0))
-        {
+        //if (Input.GetMouseButtonDown(0))
+        //{
             //create ray
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        //    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        //    RaycastHit hit;
 
             //if the ray hits
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
+        //    if (Physics.Raycast(ray, out hit, 100))
+        //    {
+        //        Interactable interactable = hit.collider.GetComponent<Interactable>();
 
-                if(interactable != null)
-                {
-                    SetFocus(interactable);
-                    Debug.Log("FocusSet");
-                }
+        //        if(interactable != null)
+         //       {
+        //            SetFocus(interactable);
+        //            Debug.Log("FocusSet");
+        //        }
 
-            }
-        }
+        //    }
+        //}
 
 
-        if (Input.GetMouseButtonDown(1))
-        {
+        //if (Input.GetMouseButtonDown(1))
+        //{
             //create ray
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+         //   Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+         //   RaycastHit hit;
 
             //if the ray hits
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
+          //  if (Physics.Raycast(ray, out hit, 100))
+          //  {
+          //      Interactable interactable = hit.collider.GetComponent<Interactable>();
 
-                if (interactable != null)
-                {
-                    RemoveFocus();
-                    Debug.Log("Focus removed");
-                }
+          //      if (interactable != null)
+          //      {
+          //          RemoveFocus();
+          //          Debug.Log("Focus removed");
+          //     }
 
-            }
-        }
+          //  }
+        //}
 
 
 
