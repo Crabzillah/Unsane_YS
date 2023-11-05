@@ -44,6 +44,8 @@ public class Interactable : MonoBehaviour
                     Interact();
                     hasInteracted = true;
                 }
+
+                hasInteracted = false;
             }
 
         }

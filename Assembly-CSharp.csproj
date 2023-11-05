@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\InventoryUI\InventorySlot.cs" />
+    <Compile Include="Assets\Scripts\Items\ItemUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

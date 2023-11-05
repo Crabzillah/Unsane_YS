@@ -29,6 +29,8 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>(); //created an item list
 
+    public bool canTakeRuby = false;
+
     public bool Add (Item item)
     {
         //add this item to the items list IF its not a default item
@@ -57,6 +59,41 @@ public class Inventory : MonoBehaviour
     }
 
 
+
+    public void CheckForRubies()
+    {
+        foreach(Item item in items)
+        {
+            Debug.Log("foreach STARTED");
+            if (item.name == "Red Ruby")
+            {
+                Debug.Log("Found ruby in Inventory");
+                canTakeRuby = true;
+                Debug.Log("CAN TAKE SET TO:" + Inventory.instance.canTakeRuby);
+
+
+            }
+            
+         
+
+        }
+
+     
+
+    }    
+
+    public void RemoveRuby()
+    {
+        foreach(Item item in items)
+        {
+            if(item.name == "Red Ruby")
+            {
+                Debug.Log("ruby removed.");
+                Remove(item);
+                canTakeRuby = false;
+            }
+        }
+    }
     public void Remove(Item item)
     {
         //remove this item from our item list
