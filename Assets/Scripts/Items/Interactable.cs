@@ -14,7 +14,7 @@ public class Interactable : MonoBehaviour
 
 
 
-    bool hasInteracted = false; // Have we already interacted with this object?
+    public bool hasInteracted = false; // Have we already interacted with this object?
 
 
     public virtual void Interact()
