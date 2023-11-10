@@ -30,6 +30,9 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>(); //created an item list
 
     public bool canTakeRuby = false;
+    
+
+    public bool haveKey = false;
 
     public bool Add (Item item)
     {
@@ -58,7 +61,40 @@ public class Inventory : MonoBehaviour
         
     }
 
+    public void CheckForKey()
+    {
+        foreach (Item item in items)
+        {
+            Debug.Log("check for key foreach STARTED");
+            if (item.name == "Key")
+            {
+                Debug.Log("Found key in Inventory");
+                haveKey = true;
+                Debug.Log("CAN TAKE SET TO:" + Inventory.instance.haveKey);
 
+
+            }
+
+
+
+        }
+
+
+
+    }
+
+    public void RemoveKey()
+    {
+        foreach (Item item in items)
+        {
+            if (item.name == "Key")
+            {
+                Debug.Log("key removed.");
+                Remove(item);
+                haveKey = false;
+            }
+        }
+    }
 
     public void CheckForRubies()
     {
