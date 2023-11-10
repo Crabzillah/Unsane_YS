@@ -34,6 +34,8 @@ public class Inventory : MonoBehaviour
 
     public bool haveKey = false;
 
+    public bool inventoryActive = false;
+
     public bool Add (Item item)
     {
         //add this item to the items list IF its not a default item

@@ -23,14 +23,23 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
 		{
-			MoveInput(value.Get<Vector2>());
+			if(Inventory.instance.inventoryActive == false)
+			{
+                MoveInput(value.Get<Vector2>());
+            }
+			
 		}
 
 		public void OnLook(InputValue value)
 		{
 			if(cursorInputForLook)
 			{
-				LookInput(value.Get<Vector2>());
+				if(Inventory.instance.inventoryActive == false)
+				{
+                    LookInput(value.Get<Vector2>());
+
+                }
+				
 			}
 		}
 
@@ -48,7 +57,9 @@ namespace StarterAssets
 
 		public void MoveInput(Vector2 newMoveDirection)
 		{
-			move = newMoveDirection;
+			if (Inventory.instance.inventoryActive == false)
+			{ move = newMoveDirection; }
+			
 		} 
 
 		public void LookInput(Vector2 newLookDirection)

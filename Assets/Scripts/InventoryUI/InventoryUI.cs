@@ -7,6 +7,8 @@ public class InventoryUI : MonoBehaviour
     public Transform itemsParent;
     public GameObject inventoryUI;
 
+    
+
    // public GameObject player;
 
     //public Component playerInputs;
@@ -37,14 +39,15 @@ public class InventoryUI : MonoBehaviour
             //make mouse visible.
             if (inventoryUI.activeSelf == true)
             {
+                inventory.inventoryActive = true;
                 Cursor.lockState = CursorLockMode.None;
             }
             else
             {
                 Cursor.lockState = CursorLockMode.Locked;
-                
+                inventory.inventoryActive = false;
 
-}
+            }
 
 
         }
