@@ -60,6 +60,21 @@ public class hidingPlace : MonoBehaviour
                     }
                 }
             }
+            stopHideText.SetActive(true);
+            hiding = true;
+            normalPlayer.SetActive(false);
+            interactable = false;
+        }
+
+        if (hiding == true)
+        {
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                stopHideText.SetActive(false);
+                normalPlayer.SetActive(true);
+                hidingPlayer.SetActive(false);
+                hiding = false;
+            }
         }
     }
 }

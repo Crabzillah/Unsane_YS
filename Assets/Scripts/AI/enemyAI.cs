@@ -39,8 +39,10 @@ public class enemyAI : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position + rayCastOffset, direction, out hit, sightDistance))
         {
+            
             if (hit.collider.gameObject.tag == "Player")
             {
+                
                 walking = false;
                 StopCoroutine("stayIdle");
                 StopCoroutine("chaseRoutine");
