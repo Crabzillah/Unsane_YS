@@ -59,11 +59,12 @@ public class hidingPlace : MonoBehaviour
                         monsterScript.stopChase(); //ep02, 4:27 11.11.23
                     }
                 }
+                stopHideText.SetActive(true);
+                hiding = true;
+                normalPlayer.SetActive(false);
+                interactable = false;
             }
-            stopHideText.SetActive(true);
-            hiding = true;
-            normalPlayer.SetActive(false);
-            interactable = false;
+
         }
 
         if (hiding == true)
