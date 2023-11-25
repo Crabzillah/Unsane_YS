@@ -16,20 +16,22 @@ public class enemyAI : MonoBehaviour
     Transform currentDest;
     Vector3 dest;
 
-    int randNum; //random number to randomize AI's destinations
+    
 
-    public int destinationAmount;
+    
 
     public Vector3 rayCastOffset;
 
     public string deathScene;
+    public float aiDistance;
+    public GameObject hideText, stopHideText;
 
     private void Start()
     {
         walking = true;
 
-        randNum = Random.Range(0, destinations.Count);
-        currentDest = destinations[randNum];
+        
+        currentDest = destinations[Random.Range(0, destinations.Count)];
     }
 
 
@@ -37,6 +39,7 @@ public class enemyAI : MonoBehaviour
     {
         Vector3 direction = (player.position - transform.position).normalized;
         RaycastHit hit;
+        aiDistance = Vector3.Distance(player.position, this.transform.position);
         if(Physics.Raycast(transform.position + rayCastOffset, direction, out hit, sightDistance))
         {
             
@@ -59,11 +62,13 @@ public class enemyAI : MonoBehaviour
             aiAnimator.ResetTrigger("walk");
             aiAnimator.ResetTrigger("idle");
             aiAnimator.SetTrigger("sprint");
-            if (ai.remainingDistance <= catchDistance)
+            if (aiDistance <= catchDistance)
             {
                 player.gameObject.SetActive(false);
                 aiAnimator.ResetTrigger("walk");
                 aiAnimator.ResetTrigger("idle");
+                hideText.SetActive(false);
+                stopHideText.SetActive(false);
                 aiAnimator.ResetTrigger("sprint");
                 aiAnimator.SetTrigger("jumpscare");
                 StartCoroutine(deathRoutine());
@@ -98,16 +103,16 @@ public class enemyAI : MonoBehaviour
         walking = true;
         chasing = false;
         StopCoroutine("chaseRoutine");
-        randNum = Random.Range(0, destinations.Count);
-        currentDest = destinations[randNum];
+        
+        currentDest = destinations[Random.Range(0, destinations.Count)];
     }
     IEnumerator stayIdle()
     {
         idleTime = Random.Range(minIdleTime, maxIdleTime);
         yield return new WaitForSeconds(idleTime);
         walking = true;
-        randNum = Random.Range(0, destinations.Count);
-        currentDest = destinations[randNum];
+        
+        currentDest = destinations[Random.Range(0, destinations.Count)];
 
     }
 
