@@ -10,6 +10,7 @@ public class hidingPlace : MonoBehaviour
     public Transform monsterTransform;
     bool interactable, hiding;
     public float loseDistance;
+    public roomDetector detector;
 
     public AudioSource hideSound, stopHideSound;
 
@@ -22,8 +23,12 @@ public class hidingPlace : MonoBehaviour
     {
         if (other.CompareTag("MainCamera"))
         {
-            hideText.SetActive(true);
-            interactable = true;
+            if(detector.inTrigger == true)
+            {
+                hideText.SetActive(true); //ep3 10:20
+                interactable = true;
+            }
+
         }
     }
     void OnTriggerExit(Collider other)
@@ -42,7 +47,7 @@ public class hidingPlace : MonoBehaviour
             {
                 hideText.SetActive(false);
                 hideSound.Play();
-                stopHideSound.Play();
+                stopHideSound.Play(); 
                 hidingPlayer.SetActive(true);
                 float distance = Vector3.Distance(monsterTransform.position, normalPlayer.transform.position);
                 if (distance > loseDistance)

@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\AI\hidingPlace.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
+    <Compile Include="Assets\Scripts\roomDetector.cs" />
     <Compile Include="Assets\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PaintingRot.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
