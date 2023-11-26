@@ -8,55 +8,50 @@ public class hidingPlace : MonoBehaviour
     public GameObject normalPlayer, hidingPlayer;
     public enemyAI monsterScript;
     public Transform monsterTransform;
-
     bool interactable, hiding;
-
     public float loseDistance;
 
+    public AudioSource hideSound, stopHideSound;
 
-    private void Start()
+    void Start()
     {
         interactable = false;
-        hiding = false; 
+        hiding = false;
     }
-
-
-
-    private void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("MainCamera"))
+        if (other.CompareTag("MainCamera"))
         {
             hideText.SetActive(true);
             interactable = true;
         }
     }
-
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
+        if (other.CompareTag("MainCamera"))
         {
-            if (other.CompareTag("MainCamera"))
-            {
-                hideText.SetActive(false); ;
-                interactable = true;
-            }
+            hideText.SetActive(false);
+            interactable = false;
         }
     }
-
-    private void Update()
+    void Update()
     {
         if (interactable == true)
         {
-            if(Input.GetKey(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 hideText.SetActive(false);
+                hideSound.Play();
+                stopHideSound.Play();
                 hidingPlayer.SetActive(true);
-
                 float distance = Vector3.Distance(monsterTransform.position, normalPlayer.transform.position);
-                if(distance > loseDistance)
+                if (distance > loseDistance)
                 {
-                    if(monsterScript.chasing == true)
+                    Debug.Log("Distance is bigger that loseDistance");
+                    if (monsterScript.chasing == true)
                     {
-                        monsterScript.stopChase(); //ep02, 4:27 11.11.23
+                        Debug.Log("Stop to chase");
+                        monsterScript.stopChase();
                     }
                 }
                 stopHideText.SetActive(true);
@@ -64,14 +59,14 @@ public class hidingPlace : MonoBehaviour
                 normalPlayer.SetActive(false);
                 interactable = false;
             }
-
         }
-
         if (hiding == true)
         {
-            if(Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 stopHideText.SetActive(false);
+                hideSound.Stop();
+                stopHideSound.Play();
                 normalPlayer.SetActive(true);
                 hidingPlayer.SetActive(false);
                 hiding = false;
