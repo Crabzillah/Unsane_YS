@@ -8,16 +8,21 @@ public class hidingPlace : MonoBehaviour
     public GameObject normalPlayer, hidingPlayer;
     public enemyAI monsterScript;
     public Transform monsterTransform;
+    public Transform exitTransform;
     bool interactable, hiding;
     public float loseDistance;
     public roomDetector detector;
 
     public AudioSource hideSound, stopHideSound;
 
+    private StarterAssets.StarterAssetsInputs inputs;
+
     void Start()
     {
         interactable = false;
         hiding = false;
+
+        inputs = GameObject.Find("PlayerCapsule").GetComponent<StarterAssets.StarterAssetsInputs>();
     }
     void OnTriggerStay(Collider other)
     {
@@ -45,6 +50,8 @@ public class hidingPlace : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
+                inputs.LookInput(Vector2.zero);
+                inputs.MoveInput(Vector2.zero);
                 hideText.SetActive(false);
                 hideSound.Play();
                 stopHideSound.Play(); 
@@ -62,6 +69,8 @@ public class hidingPlace : MonoBehaviour
                 stopHideText.SetActive(true);
                 hiding = true;
                 normalPlayer.SetActive(false);
+                normalPlayer.transform.position = exitTransform.position;
+                normalPlayer.transform.rotation = exitTransform.rotation;
                 interactable = false;
             }
         }
