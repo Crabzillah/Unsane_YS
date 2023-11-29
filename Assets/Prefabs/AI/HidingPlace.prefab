@@ -99,8 +99,40 @@ Transform:
   - {fileID: 8818680504510372529}
   - {fileID: 9159378615103401214}
   - {fileID: 5418767935952373463}
+  - {fileID: 5910885468855422213}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 74.006, z: 0}
+--- !u!1 &6781941726378633686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5910885468855422213}
+  m_Layer: 0
+  m_Name: GetOutSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5910885468855422213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6781941726378633686}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.25, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5974157315310246310}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &7692485068726560615
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +317,7 @@ MonoBehaviour:
   hidingPlayer: {fileID: 9014561513395456308}
   monsterScript: {fileID: 0}
   monsterTransform: {fileID: 0}
+  exitTransform: {fileID: 5910885468855422213}
   loseDistance: 8
   detector: {fileID: 7103606539330290591}
   hideSound: {fileID: 0}
