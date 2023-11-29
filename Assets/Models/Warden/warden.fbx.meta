@@ -33,12 +33,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: PlasticGreen
-    second: {fileID: 2100000, guid: 2ef3af7de41f95f47b02ab66dcdf668f, type: 2}
+    second: {fileID: 2100000, guid: da02dc063e4217f41b869407ef577c60, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: defaultMat
-    second: {fileID: 2100000, guid: 8d9c3e9d6c063e24c8a5b0917d8f10fa, type: 2}
+    second: {fileID: 2100000, guid: da02dc063e4217f41b869407ef577c60, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
