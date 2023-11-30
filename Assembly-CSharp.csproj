@@ -62,11 +62,13 @@
     <Compile Include="Assets\Scripts\Items\Interactable.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />
     <Compile Include="Assets\Scripts\Puzzles\Painting.cs" />
+    <Compile Include="Assets\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\AI\enemyAI.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\InventoryUI\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
     <Compile Include="Assets\InputSystem\StarterAssetsInputs.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Items\ItemPickup.cs" />
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />

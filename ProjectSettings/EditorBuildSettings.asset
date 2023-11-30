@@ -6,11 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DevScene/DevScene.unity
-    guid: 235878d881df9d849b8aea1379cd58a4
-  - enabled: 0
-    path: Assets/Scenes/Playground.unity
-    guid: 707acc8dffb72b144bb1ffbe1c965f3d
+    path: Assets/Scenes/GameScenes/MainMenu.unity
+    guid: ef5a0cf0144e45140a231708b7f78baf
   - enabled: 1
     path: Assets/Scenes/DayanaTestScene/DayanaTestScene.unity
     guid: 5efb3bf0b72f4464087a6369ac00bce4
