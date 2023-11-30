@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public bool isPaused; //can make static and fix further bugs
+    public static bool isPaused; //can make static and fix further bugs
+    private StarterAssets.StarterAssetsInputs inputs;
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);
+        inputs = GameObject.Find("PlayerCapsule").GetComponent<StarterAssets.StarterAssetsInputs>();
     }
 
     // Update is called once per frame
@@ -21,26 +23,40 @@ public class PauseMenu : MonoBehaviour
             if(isPaused)
             {
                 ResumeGame();
+                
             }
             else
             {
                 PauseGame();
+
             }
         }
     }
 
     public void PauseGame()
     {
+        
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        Cursor.lockState = CursorLockMode.None;
+        inputs.LookInput(Vector2.zero);
+        inputs.MoveInput(Vector2.zero);
+
+
+
     }
 
     public void ResumeGame()
     {
+        
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        inputs.LookInput(Vector2.zero);
+        inputs.MoveInput(Vector2.zero);
+
     }
 
     public void GoToMainMenu()
