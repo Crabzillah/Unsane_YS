@@ -3,7 +3,12 @@ guid: 27a4297c34c83eb439b6086c0d29ff7f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hallway_Lamp_Door
+    second: {fileID: 2100000, guid: 91b02bb61f5675a4296138e9330756cb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 05144cbee27dbca43bc0882493944780
+guid: dfbabd671da516a45b4212a66f025962
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hallway_Lamp_Door
-    second: {fileID: 2100000, guid: 91b02bb61f5675a4296138e9330756cb, type: 2}
+      name: Patient_room
+    second: {fileID: 2100000, guid: 1d85399e97baf154dbbb6eff0d6564d5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
