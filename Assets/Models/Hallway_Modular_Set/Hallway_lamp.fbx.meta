@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hallway_Lamp_Door
-    second: {fileID: 2100000, guid: ef1ab05a9d78814459fbeb4aa1951514, type: 2}
+    second: {fileID: 2100000, guid: 91b02bb61f5675a4296138e9330756cb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
