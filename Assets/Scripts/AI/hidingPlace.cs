@@ -36,6 +36,7 @@ public class hidingPlace : MonoBehaviour
         }
         else if (detector.inTrigger == false)
         {
+            Debug.Log("Attempt to show hideText");
             hideText.SetActive(false); 
             interactable = false;
         }
@@ -46,7 +47,7 @@ public class hidingPlace : MonoBehaviour
         {
             if(detector.inTrigger == true)
             {
-                hideText.SetActive(false);
+                hideText.SetActive(true);
                 interactable = false;
             }
 
