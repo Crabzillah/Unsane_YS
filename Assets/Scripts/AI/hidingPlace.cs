@@ -33,13 +33,13 @@ public class hidingPlace : MonoBehaviour
                 hideText.SetActive(true); 
                 interactable = true;
             }
+            else if (detector.inTrigger == false)
+            {
+                hideText.SetActive(false);
+                interactable = false;
+            }
         }
-        else if (detector.inTrigger == false)
-        {
-            Debug.Log("Attempt to show hideText");
-            hideText.SetActive(false); 
-            interactable = false;
-        }
+
     }
     void OnTriggerExit(Collider other)
     {
@@ -47,7 +47,7 @@ public class hidingPlace : MonoBehaviour
         {
             if(detector.inTrigger == true)
             {
-                hideText.SetActive(true);
+                hideText.SetActive(false);
                 interactable = false;
             }
 
