@@ -4684,7 +4684,7 @@ PrefabInstance:
     - target: {fileID: 8280081620775721710, guid: 54765cc1e1fbaa34292ea151e1cba91a,
         type: 3}
       propertyPath: m_Transition
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8280081620775721710, guid: 54765cc1e1fbaa34292ea151e1cba91a,
         type: 3}
