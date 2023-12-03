@@ -899,6 +899,10 @@
       <Project>{CD93E5C0-281F-B23B-29C2-28EAA286319C}</Project>
       <Name>Unity.RenderPipelines.Core.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="SeppePeelman.EditorTools.SurfaceAlignTool.csproj">
+      <Project>{4DBC7574-F010-7E71-B379-0E1F54C562B5}</Project>
+      <Name>SeppePeelman.EditorTools.SurfaceAlignTool</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj">
       <Project>{50A6D5BE-7260-67FB-561C-B0287E0FD904}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>

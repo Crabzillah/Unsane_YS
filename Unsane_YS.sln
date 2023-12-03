@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipeline.Universal.ShaderLibrary", "Unity.RenderPipeline.Universal.ShaderLibrary.csproj", "{BBDDD500-B0CB-E413-148C-CBD1B7677ABB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeppePeelman.EditorTools.SurfaceAlignTool", "SeppePeelman.EditorTools.SurfaceAlignTool.csproj", "{4DBC7574-F010-7E71-B379-0E1F54C562B5}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{B62B3448-CFDA-B8B6-639E-16744F396AC3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.ShaderGraph.Utilities", "Unity.ShaderGraph.Utilities.csproj", "{C7584036-06CC-8FF2-2171-40AA1F06ACD8}"
@@ -77,6 +79,10 @@ Global
 		{BBDDD500-B0CB-E413-148C-CBD1B7677ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBDDD500-B0CB-E413-148C-CBD1B7677ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBDDD500-B0CB-E413-148C-CBD1B7677ABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DBC7574-F010-7E71-B379-0E1F54C562B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DBC7574-F010-7E71-B379-0E1F54C562B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DBC7574-F010-7E71-B379-0E1F54C562B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DBC7574-F010-7E71-B379-0E1F54C562B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B62B3448-CFDA-B8B6-639E-16744F396AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B62B3448-CFDA-B8B6-639E-16744F396AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B62B3448-CFDA-B8B6-639E-16744F396AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
