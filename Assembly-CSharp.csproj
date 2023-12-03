@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\InventoryUI\Inventory.cs" />
     <Compile Include="Assets\Scripts\AI\hidingPlace.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
+    <Compile Include="Assets\lean.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
     <Compile Include="Assets\Scripts\roomDetector.cs" />
     <Compile Include="Assets\Scripts\BasicRigidBodyPush.cs" />

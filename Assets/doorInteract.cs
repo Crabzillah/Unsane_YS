@@ -6,7 +6,7 @@ public class doorInteract : MonoBehaviour
 {
     public Animator animator;
     public GameObject hideText;
-    bool doorIsOpen = false;
+    public bool doorIsOpen = false;
     bool interactable;
     //public float doorCloseTimer;
     // Start is called before the first frame update
