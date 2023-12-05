@@ -24,7 +24,7 @@ public class doorInteract : MonoBehaviour
         if (other.CompareTag("MainCamera"))
         {
             hideText.SetActive(false);
-            interactable = true;
+            interactable = false;
         }
     }
     void Update()
