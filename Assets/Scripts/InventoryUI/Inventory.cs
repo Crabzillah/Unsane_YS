@@ -15,6 +15,8 @@ public class Inventory : MonoBehaviour
             return;
         }
         instance = this;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     #endregion
@@ -35,6 +37,7 @@ public class Inventory : MonoBehaviour
     public bool haveKey = false;
 
     public bool inventoryActive = false;
+
 
     public bool Add (Item item)
     {

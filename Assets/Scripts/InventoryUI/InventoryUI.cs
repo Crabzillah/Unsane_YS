@@ -35,19 +35,23 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
-            //make mouse visible.
-            if (inventoryUI.activeSelf == true)
+            if (PauseMenu.isPaused == false)
             {
-                inventory.inventoryActive = true;
-                Cursor.lockState = CursorLockMode.None;
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                inventory.inventoryActive = false;
+                inventoryUI.SetActive(!inventoryUI.activeSelf);
+                //make mouse visible.
+                if (inventoryUI.activeSelf == true)
+                {
+                    inventory.inventoryActive = true;
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                else
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    inventory.inventoryActive = false;
 
+                }
             }
+
 
 
         }

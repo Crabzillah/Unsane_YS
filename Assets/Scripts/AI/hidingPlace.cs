@@ -28,20 +28,29 @@ public class hidingPlace : MonoBehaviour
     {
         if (other.CompareTag("MainCamera"))
         {
-            if(detector.inTrigger == true)
+            if (detector.inTrigger == true)
             {
-                hideText.SetActive(true); //ep3 10:20
+                hideText.SetActive(true); 
                 interactable = true;
             }
-
+            else if (detector.inTrigger == false)
+            {
+                hideText.SetActive(false);
+                interactable = false;
+            }
         }
+
     }
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("MainCamera"))
         {
-            hideText.SetActive(false);
-            interactable = false;
+            if(detector.inTrigger == true)
+            {
+                hideText.SetActive(false);
+                interactable = false;
+            }
+
         }
     }
     void Update()

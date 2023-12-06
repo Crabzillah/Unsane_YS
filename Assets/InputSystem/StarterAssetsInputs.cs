@@ -32,9 +32,13 @@ namespace StarterAssets
 
 
 			}
-            else
-            {
-				MoveInput(value.Get<Vector2>());
+			else
+			{
+				if(PauseMenu.isPaused == false)
+				{
+					MoveInput(value.Get<Vector2>());
+				}
+				
 			}
 			
 		}
@@ -48,11 +52,15 @@ namespace StarterAssets
 
 					LookInput(Vector2.zero);
 
-                }
+				}
 
-                else
-                {
-					LookInput(value.Get<Vector2>());
+				else
+				{
+					if(PauseMenu.isPaused == false)
+					{
+						LookInput(value.Get<Vector2>());
+					}
+					
 				}
 				
 			}

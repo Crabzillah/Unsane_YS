@@ -10,8 +10,8 @@ public class enemyAI : MonoBehaviour
     public List<Transform> destinations;
     public Animator aiAnimator;
 
-    public float walkSpeed, chaseSpeed, minIdleTime, maxIdleTime,idleTime, sightDistance, catchDistance, chaseTime, minChaseTime, maxChaseTime, jumpscareTime;
-    public bool walking, chasing;
+    public float walkSpeed, chaseSpeed, minIdleTime, maxIdleTime,idleTime, detectionDistance, catchDistance, searchDistance, minSearchTime, maxSearchTime, minChaseTime, maxChaseTime, jumpscareTime;
+    public bool walking, chasing, searching;
     public Transform player;
     Transform currentDest;
     Vector3 dest;
@@ -40,7 +40,7 @@ public class enemyAI : MonoBehaviour
         Vector3 direction = (player.position - transform.position).normalized;
         RaycastHit hit;
         aiDistance = Vector3.Distance(player.position, this.transform.position);
-        if(Physics.Raycast(transform.position + rayCastOffset, direction, out hit, sightDistance))
+        if(Physics.Raycast(transform.position + rayCastOffset, direction, out hit, detectionDistance))
         {
             
             if (hit.collider.gameObject.tag == "Player")
@@ -48,12 +48,34 @@ public class enemyAI : MonoBehaviour
                 
                 walking = false;
                 StopCoroutine("stayIdle");
+                StopCoroutine("searchRoutine");
+                StartCoroutine("searchRoutine");
+
+
+                searching = true;
+            }
+        }
+        if(searching == true)
+        {
+            ai.speed = 0;
+            aiAnimator.ResetTrigger("walk");
+            aiAnimator.ResetTrigger("idle");
+            aiAnimator.ResetTrigger("sprint");
+            aiAnimator.SetTrigger("search");
+            if(aiDistance <= searchDistance)
+            {
+                
+                StopCoroutine("stayIdle");
                 StopCoroutine("chaseRoutine");
+                StopCoroutine("searchRoutine");
                 StartCoroutine("chaseRoutine");
 
                 chasing = true;
+                searching = false;
             }
         }
+
+
         if(chasing == true)
         {
             dest = player.position;
@@ -61,12 +83,14 @@ public class enemyAI : MonoBehaviour
             ai.speed = chaseSpeed;
             aiAnimator.ResetTrigger("walk");
             aiAnimator.ResetTrigger("idle");
+            aiAnimator.ResetTrigger("search");
             aiAnimator.SetTrigger("sprint");
             if (aiDistance <= catchDistance)
             {
                 player.gameObject.SetActive(false);
                 aiAnimator.ResetTrigger("walk");
                 aiAnimator.ResetTrigger("idle");
+                aiAnimator.ResetTrigger("search");
                 hideText.SetActive(false);
                 stopHideText.SetActive(false);
                 aiAnimator.ResetTrigger("sprint");
@@ -83,11 +107,13 @@ public class enemyAI : MonoBehaviour
             ai.speed = walkSpeed;
             aiAnimator.ResetTrigger("sprint");
             aiAnimator.ResetTrigger("idle");
+            aiAnimator.ResetTrigger("search");
             aiAnimator.SetTrigger("walk");
             if (ai.remainingDistance <= ai.stoppingDistance)
             {
                 aiAnimator.ResetTrigger("sprint");
                 aiAnimator.ResetTrigger("walk");
+                aiAnimator.ResetTrigger("search");
                 aiAnimator.SetTrigger("idle");
                 ai.speed = 0;
                 StopCoroutine("stayIdle");
@@ -116,10 +142,16 @@ public class enemyAI : MonoBehaviour
 
     }
 
+    IEnumerator searchRoutine()
+    {
+        yield return new WaitForSeconds(Random.Range(minSearchTime,maxSearchTime));
+        searching = false;
+        walking = true;
+        currentDest = destinations[Random.Range(0, destinations.Count)];
+    }
     IEnumerator chaseRoutine()
     {
-        chaseTime = Random.Range(minChaseTime, maxChaseTime);
-        yield return new WaitForSeconds(chaseTime);
+        yield return new WaitForSeconds(Random.Range(minChaseTime, maxChaseTime));
         stopChase();
 
     }

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{0C887FF4-E641-28A7-5F48-7F94B81F7B16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeppePeelman.EditorTools.SurfaceAlignTool", "SeppePeelman.EditorTools.SurfaceAlignTool.csproj", "{4DBC7574-F010-7E71-B379-0E1F54C562B5}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{B62B3448-CFDA-B8B6-639E-16744F396AC3}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{0C887FF4-E641-28A7-5F48-7F94B81F7B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C887FF4-E641-28A7-5F48-7F94B81F7B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C887FF4-E641-28A7-5F48-7F94B81F7B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DBC7574-F010-7E71-B379-0E1F54C562B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DBC7574-F010-7E71-B379-0E1F54C562B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DBC7574-F010-7E71-B379-0E1F54C562B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DBC7574-F010-7E71-B379-0E1F54C562B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B62B3448-CFDA-B8B6-639E-16744F396AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B62B3448-CFDA-B8B6-639E-16744F396AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B62B3448-CFDA-B8B6-639E-16744F396AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
