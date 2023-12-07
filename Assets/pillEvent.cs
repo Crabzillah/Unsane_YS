@@ -11,11 +11,14 @@ public class pillEvent : MonoBehaviour
     public GameObject fakeText;
     public GameObject consumeText;
 
-    private void Start()
+    private void OnEnable()
     {
+        pillInHand.SetActive(true);
         fakeText.SetActive(true);
         consumeText.SetActive(true);
+        
     }
+    
     private void Update()
     {
 
@@ -23,8 +26,10 @@ public class pillEvent : MonoBehaviour
         {
             SpawnPill();
             pillInHand.SetActive(false);
+            bedEvent.SetActive(true);
             fakeText.SetActive(false);
             consumeText.SetActive(false);
+            this.gameObject.SetActive(false);
 
 
             // start bed event
@@ -36,11 +41,12 @@ public class pillEvent : MonoBehaviour
             bedEvent.SetActive(true);
             fakeText.SetActive(false);
             consumeText.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 
     private void SpawnPill()
     {
-        Instantiate(pill, transform.position, transform.rotation);
+        Instantiate(pill, pillInHand.transform.position, pillInHand.transform.rotation);
     }
 }

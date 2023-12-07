@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 56725fc5a189eda4b88f3ae82fa490e1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56725fc5a189eda4b88f3ae82fa490e1,
         type: 3}
@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 56725fc5a189eda4b88f3ae82fa490e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.094
+      value: 2.972
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56725fc5a189eda4b88f3ae82fa490e1,
         type: 3}
@@ -134,8 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1621375442900935594}
-  hideText: {fileID: 0}
-  doorCloseTimer: 5
+  openText: {fileID: 0}
+  doorIsOpen: 0
 --- !u!65 &3973386430557662886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 2}
+  m_Size: {x: 0.27, y: 3, z: 2}
   m_Center: {x: 0, y: 2, z: -1}
 --- !u!1 &5934956823041075282 stripped
 GameObject:

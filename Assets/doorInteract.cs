@@ -5,7 +5,7 @@ using UnityEngine;
 public class doorInteract : MonoBehaviour
 {
     public Animator animator;
-    public GameObject hideText;
+    public GameObject openText;
     public bool doorIsOpen = false;
     bool interactable;
     //public float doorCloseTimer;
@@ -14,7 +14,7 @@ public class doorInteract : MonoBehaviour
     {
         if (other.CompareTag("MainCamera"))
         {
-            hideText.SetActive(true);
+            openText.SetActive(true);
             interactable = true;
         }
     }
@@ -23,7 +23,7 @@ public class doorInteract : MonoBehaviour
     {
         if (other.CompareTag("MainCamera"))
         {
-            hideText.SetActive(false);
+            openText.SetActive(false);
             interactable = false;
         }
     }

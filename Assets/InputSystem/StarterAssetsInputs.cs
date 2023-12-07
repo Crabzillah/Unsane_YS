@@ -26,18 +26,21 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
 		{
-			if(Inventory.instance.inventoryActive == true)
+			if (Inventory.instance.inventoryActive == true)
 			{
 				MoveInput(Vector2.zero);
 
 
 			}
+			else if (PauseMenu.isPaused == true)
+			{
+				MoveInput(Vector2.zero);
+			}
 			else
 			{
-				if(PauseMenu.isPaused == false)
-				{
-					MoveInput(value.Get<Vector2>());
-				}
+				
+				MoveInput(value.Get<Vector2>());
+				
 				
 			}
 			
@@ -54,12 +57,15 @@ namespace StarterAssets
 
 				}
 
+				else if (PauseMenu.isPaused == true)
+				{
+					LookInput(Vector2.zero);
+				}
 				else
 				{
-					if(PauseMenu.isPaused == false)
-					{
-						LookInput(value.Get<Vector2>());
-					}
+					
+					LookInput(value.Get<Vector2>());
+					
 					
 				}
 				

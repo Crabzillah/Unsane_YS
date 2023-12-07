@@ -6,6 +6,7 @@ public class ItemUser : Interactable
 {
     public GameObject objectToSpawn;
     public Transform spawnPoint;
+    public Animator animator;
     //public Item item;
     public float rubiesTaken;
     public float rubiesNeeded;
@@ -56,7 +57,9 @@ public class ItemUser : Interactable
     {
         if( rubiesTaken == rubiesNeeded)
         {
-            GameObject newObject = Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
+            animator.SetTrigger("Open");
+            objectToSpawn.SetActive(true);
+            //GameObject newObject = Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
             pickUpIndicator.SetActive(false);
             Inventory.instance.RemoveRuby();
             Destroy(this);

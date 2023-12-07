@@ -9,6 +9,8 @@ public class InventorySlot : MonoBehaviour
     public GameObject rubyText;
     public GameObject fileText;
     public GameObject pillText;
+    public GameObject roomKeyText;
+    public GameObject elevatorKeyText;
 
     Item item; //this variable will keep track of the current item in the slot
 
@@ -49,6 +51,8 @@ public class InventorySlot : MonoBehaviour
                 rubyText.SetActive(!rubyText.activeInHierarchy); // activate/deactivate ruby description text panel
                 fileText.SetActive(false);
                 pillText.SetActive(false);
+                roomKeyText.SetActive(false);
+                elevatorKeyText.SetActive(false);
 
 
             }
@@ -59,6 +63,8 @@ public class InventorySlot : MonoBehaviour
                 fileText.SetActive(!fileText.activeInHierarchy); // activate/deactivate ruby description text panel
                 pillText.SetActive(false);
                 rubyText.SetActive(false);
+                roomKeyText.SetActive(false);
+                elevatorKeyText.SetActive(false);
 
             }
             if (item.name == "Pill")
@@ -68,7 +74,27 @@ public class InventorySlot : MonoBehaviour
                 pillText.SetActive(!pillText.activeInHierarchy); // activate/deactivate ruby description text panel
                 rubyText.SetActive(false);
                 fileText.SetActive(false);
+                roomKeyText.SetActive(false);
+                elevatorKeyText.SetActive(false);
 
+            }
+            if (item.name == "RoomKey")
+            {
+                item.Use();
+                roomKeyText.SetActive(!roomKeyText.activeInHierarchy); // activate/deactivate ruby description text panel
+                rubyText.SetActive(false);
+                fileText.SetActive(false);
+                pillText.SetActive(false);
+                elevatorKeyText.SetActive(false);
+            }
+            if (item.name == "ElevatorKey")
+            {
+                item.Use();
+                elevatorKeyText.SetActive(!elevatorKeyText.activeInHierarchy); // activate/deactivate ruby description text panel
+                rubyText.SetActive(false);
+                fileText.SetActive(false);
+                pillText.SetActive(false);
+                roomKeyText.SetActive(false);
             }
 
         }
