@@ -13,6 +13,7 @@ public class enemyAI : MonoBehaviour
     public float walkSpeed, chaseSpeed, minIdleTime, maxIdleTime,idleTime, detectionDistance, catchDistance, searchDistance, minSearchTime, maxSearchTime, minChaseTime, maxChaseTime, jumpscareTime;
     public bool walking, chasing, searching;
     public Transform player;
+    public Transform spawnPoint;
     Transform currentDest;
     Vector3 dest;
 
@@ -24,7 +25,7 @@ public class enemyAI : MonoBehaviour
 
     public string deathScene;
     public float aiDistance;
-    public GameObject hideText, stopHideText;
+    public GameObject hideText, stopHideText, bedStartEvent;
 
     private void Start()
     {
@@ -159,7 +160,11 @@ public class enemyAI : MonoBehaviour
     IEnumerator deathRoutine()
     {
         yield return new WaitForSeconds(jumpscareTime);
-        SceneManager.LoadScene(deathScene);
+        //SceneManager.LoadScene(deathScene);
+        bedStartEvent.SetActive(true);
+        player.transform.position = spawnPoint.transform.position;
+        player.transform.rotation = spawnPoint.transform.rotation;
+        StartCoroutine("searchRoutine");
 
     }
 }

@@ -7,12 +7,14 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public static bool isPaused; //can make static and fix further bugs
+    public GameObject player;
     private StarterAssets.StarterAssetsInputs inputs;
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);
-        inputs = GameObject.Find("PlayerCapsule").GetComponent<StarterAssets.StarterAssetsInputs>();
+        
+
     }
 
     // Update is called once per frame
@@ -20,6 +22,10 @@ public class PauseMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            if(inputs = null)
+            {
+                CheckForInputs();
+            }
             if(isPaused)
             {
                 ResumeGame();
@@ -68,5 +74,16 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    void CheckForInputs()
+    {
+        try
+        { inputs = player.GetComponent<StarterAssets.StarterAssetsInputs>(); }
+        catch
+        {
+            Debug.Log("CAN'T Find INPUTS YET");
+        }
+        
     }
 }
