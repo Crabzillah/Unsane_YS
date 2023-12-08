@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Puzzles\KeyDoor.cs" />
     <Compile Include="Assets\Scripts\Items\Interactable.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />
+    <Compile Include="Assets\ElevatorButton.cs" />
     <Compile Include="Assets\Scripts\Puzzles\Painting.cs" />
     <Compile Include="Assets\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\AI\enemyAI.cs" />

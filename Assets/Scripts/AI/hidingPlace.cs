@@ -15,14 +15,14 @@ public class hidingPlace : MonoBehaviour
 
     public AudioSource hideSound, stopHideSound;
 
-    private StarterAssets.StarterAssetsInputs inputs;
+    
 
     void Start()
     {
         interactable = false;
         hiding = false;
 
-        inputs = GameObject.Find("PlayerCapsule").GetComponent<StarterAssets.StarterAssetsInputs>();
+        
     }
     void OnTriggerStay(Collider other)
     {
@@ -59,8 +59,7 @@ public class hidingPlace : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                inputs.LookInput(Vector2.zero);
-                inputs.MoveInput(Vector2.zero);
+
                 hideText.SetActive(false);
                 hideSound.Play();
                 stopHideSound.Play(); 
