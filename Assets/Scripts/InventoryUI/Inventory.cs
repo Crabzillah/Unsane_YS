@@ -75,17 +75,24 @@ public class Inventory : MonoBehaviour
             {
                 Debug.Log("Found key in Inventory");
                 haveKey = true;
-                Debug.Log("CAN TAKE SET TO:" + Inventory.instance.haveKey);
-
+                Debug.Log("Have Key set to:" + Inventory.instance.haveKey);
 
             }
-
-
-
         }
+    }
+    public void CheckForElevatorKey()
+    {
+        foreach (Item item in items)
+        {
+            Debug.Log("check for key foreach STARTED");
+            if (item.name == "RoomKey")
+            {
+                Debug.Log("Found Elevator key in Inventory");
+                haveKey = true;
+                Debug.Log("Have Key set to:" + Inventory.instance.haveKey);
 
-
-
+            }
+        }
     }
 
     public void RemoveKey()

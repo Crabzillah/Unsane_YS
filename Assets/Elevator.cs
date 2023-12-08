@@ -11,19 +11,21 @@ public class Elevator : MonoBehaviour
 
     bool interactable;
     bool isInRoutine;
+    bool elevatorCalled;
     public bool playerHasElevatorKey;
 
     private void Start()
     {
+        elevatorCalled = false;
         isInRoutine = false;
         playerHasElevatorKey = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("MainCamera"))
+        if(other.CompareTag("MainCamera") && !elevatorCalled)
         {
-            Inventory.instance.CheckForKey();
+            Inventory.instance.CheckForElevatorKey();
             callElevatorText.SetActive(true);
             interactable = true;
         }
@@ -33,14 +35,25 @@ public class Elevator : MonoBehaviour
     {
         if(other.CompareTag("MainCamera"))
         {
-            callElevatorText.SetActive(true);
+            callElevatorText.SetActive(false);
             interactable = false;
         }
     }
 
     private void Update()
     {
-        while(interactable == true)
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            animator.SetTrigger("Open");
+            elevatorCalled = true;
+            callElevatorText.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            animator.SetTrigger("Close");
+            
+        }
+        if (interactable == true)
         {
             if(Input.GetKeyDown(KeyCode.F))
             {
@@ -48,16 +61,18 @@ public class Elevator : MonoBehaviour
                 {
                     needKeyText.SetActive(true);
                     isInRoutine = true;
+
+                    elevatorCalled = true;
+                    callElevatorText.SetActive(false);
                     StartCoroutine(showText());
                 }
                 else if (Inventory.instance.haveKey)
                 {
                     animator.SetTrigger("Open");
+                    elevatorCalled = true;
+                    callElevatorText.SetActive(false);
                 }
-                else
-                {
-                    return;
-                }
+                
             }
         }
     }
@@ -67,6 +82,7 @@ public class Elevator : MonoBehaviour
         yield return new WaitForSeconds(textShowTimer);
         needKeyText.SetActive(false);
         isInRoutine = false;
+        elevatorCalled = false;
     }
 
 }
