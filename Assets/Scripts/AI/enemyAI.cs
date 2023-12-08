@@ -17,9 +17,9 @@ public class enemyAI : MonoBehaviour
     Transform currentDest;
     Vector3 dest;
 
-    
 
-    
+
+    public bool isInDeathRoutine;
 
     public Vector3 rayCastOffset;
 
@@ -30,7 +30,7 @@ public class enemyAI : MonoBehaviour
     private void Start()
     {
         walking = true;
-
+        isInDeathRoutine = false;
         
         currentDest = destinations[Random.Range(0, destinations.Count)];
     }
@@ -96,6 +96,7 @@ public class enemyAI : MonoBehaviour
                 stopHideText.SetActive(false);
                 aiAnimator.ResetTrigger("sprint");
                 aiAnimator.SetTrigger("jumpscare");
+                isInDeathRoutine = true;
                 StartCoroutine(deathRoutine());
                 chasing = false;
             }
@@ -165,6 +166,7 @@ public class enemyAI : MonoBehaviour
         player.transform.position = playerSpawnPoint.transform.position;
         player.transform.rotation = playerSpawnPoint.transform.rotation;
         StartCoroutine("searchRoutine");
+        isInDeathRoutine = false;
 
     }
 }

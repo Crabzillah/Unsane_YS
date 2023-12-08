@@ -24,6 +24,11 @@ namespace StarterAssets
 		bool canMove;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
+		private void OnEnable()
+		{
+			MoveInput(Vector2.zero);
+			LookInput(Vector2.zero);
+		}
 		public void OnMove(InputValue value)
 		{
 			if (Inventory.instance.inventoryActive == true)

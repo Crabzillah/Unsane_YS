@@ -62,7 +62,7 @@ public class hidingPlace : MonoBehaviour
 
                 hideText.SetActive(false);
                 hideSound.Play();
-                stopHideSound.Play(); 
+                stopHideSound.Play();
                 hidingPlayer.SetActive(true);
                 float distance = Vector3.Distance(monsterTransform.position, normalPlayer.transform.position);
                 if (distance > loseDistance)
@@ -93,6 +93,14 @@ public class hidingPlace : MonoBehaviour
                 hidingPlayer.SetActive(false);
                 hiding = false;
             }
+        }
+        if (monsterScript.isInDeathRoutine == true)
+        {
+            stopHideText.SetActive(false);
+            hideSound.Stop();
+            stopHideSound.Play();
+            hidingPlayer.SetActive(false);
+            hiding = false;
         }
     }
 }

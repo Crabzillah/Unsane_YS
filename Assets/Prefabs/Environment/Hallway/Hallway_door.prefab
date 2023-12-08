@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 56725fc5a189eda4b88f3ae82fa490e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.972
+      value: -0.094
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56725fc5a189eda4b88f3ae82fa490e1,
         type: 3}
@@ -68,10 +68,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6734663292643140205, guid: 56725fc5a189eda4b88f3ae82fa490e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -2716064460076647659, guid: 56725fc5a189eda4b88f3ae82fa490e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -2700831610035412421, guid: 56725fc5a189eda4b88f3ae82fa490e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 89.98021
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 56725fc5a189eda4b88f3ae82fa490e1,
         type: 3}
       propertyPath: m_Name
       value: Hallway_door
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 56725fc5a189eda4b88f3ae82fa490e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547546862159679490, guid: 56725fc5a189eda4b88f3ae82fa490e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -155,7 +180,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.27, y: 3, z: 2}
+  m_Size: {x: 1.3, y: 3, z: 2}
   m_Center: {x: 0, y: 2, z: -1}
 --- !u!1 &5934956823041075282 stripped
 GameObject:

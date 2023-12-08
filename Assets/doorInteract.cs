@@ -5,11 +5,26 @@ using UnityEngine;
 public class doorInteract : MonoBehaviour
 {
     public Animator animator;
+    public enemyAI enemy;
     public GameObject openText;
-    public bool doorIsOpen = false;
+    public bool doorIsOpen;
     bool interactable;
     //public float doorCloseTimer;
     // Start is called before the first frame update
+    private void Start()
+    {
+        doorIsOpen = false;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        //if (other.CompareTag("Enemy") && enemy.chasing)
+        //{
+        //    animator.ResetTrigger("Close");
+        //    animator.SetTrigger("FastOpen");
+        //    doorIsOpen = true;
+            
+        //}
+    }
     void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("MainCamera"))
@@ -17,6 +32,7 @@ public class doorInteract : MonoBehaviour
             openText.SetActive(true);
             interactable = true;
         }
+        
     }
 
     void OnTriggerExit(Collider other)
@@ -25,6 +41,18 @@ public class doorInteract : MonoBehaviour
         {
             openText.SetActive(false);
             interactable = false;
+        }
+        if (other.CompareTag("Player") && doorIsOpen && !enemy.chasing)
+        {
+            Close();
+        }
+        if (other.CompareTag("MainCamera") && doorIsOpen && !enemy.chasing)
+        {
+            Close();
+        }
+        if(other.CompareTag("Enemy") && doorIsOpen && enemy.chasing)
+        {
+            Close();
         }
     }
     void Update()
@@ -39,16 +67,31 @@ public class doorInteract : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                
-
                 if (doorIsOpen == false)
                 {
-                    
-                    animator.SetTrigger("OpenDoor");
-                    doorIsOpen = true;
+                    Open();
                 }
             }
         }
+    }
+
+    void SetDoorClosed()
+    {
+        doorIsOpen = false;
+    }
+
+    void Close()
+    {
+        
+        animator.ResetTrigger("Open");
+        animator.SetTrigger("Close");
+    }
+    void Open()
+    {
+        
+        animator.ResetTrigger("Close");
+        animator.SetTrigger("Open");
+        doorIsOpen = true;
     }
 
     //IEnumerator CloseDoor()
