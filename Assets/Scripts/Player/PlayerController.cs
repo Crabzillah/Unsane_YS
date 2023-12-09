@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         {
             Interactable interactable = collision.GetComponent<Interactable>();
 
-            if (interactable != null)
+            if (interactable != null && interactable.canInteract)
             {
                 SetFocus(interactable);
                 Debug.Log("FocusSetAutomatically");

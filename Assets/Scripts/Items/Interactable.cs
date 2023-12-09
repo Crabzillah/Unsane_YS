@@ -18,11 +18,11 @@ public class Interactable : MonoBehaviour
 
     public bool isAutoPick = false;
 
-
+    public bool canInteract = true;
     public virtual void Interact()
     {
         // This method is meant to be overwritten
-        Debug.Log("Interact with " + transform.name);
+        //Debug.Log("Interact with " + transform.name);
 
 
     }
@@ -62,10 +62,14 @@ public class Interactable : MonoBehaviour
 
     public void OnFocused(Transform playerTransform)
     {
-        isFocus = true;
-        player = playerTransform;
-        hasInteracted = false;
-        pickUpIndicator.SetActive(true);
+        if(canInteract)
+        {
+            isFocus = true;
+            player = playerTransform;
+            hasInteracted = false;
+            pickUpIndicator.SetActive(true);
+        }
+
     }
 
     public void OnDefocused()
