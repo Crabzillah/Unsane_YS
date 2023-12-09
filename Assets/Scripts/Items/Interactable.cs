@@ -16,6 +16,8 @@ public class Interactable : MonoBehaviour
 
     public bool hasInteracted = false; // Have we already interacted with this object?
 
+    public bool isAutoPick = false;
+
 
     public virtual void Interact()
     {
@@ -48,6 +50,11 @@ public class Interactable : MonoBehaviour
                 hasInteracted = false;
             }
 
+        }
+        if(isAutoPick)
+        {
+            Interact();
+            hasInteracted = true;
         }
     }
 

@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,69 +9,63 @@ public class PlayerController : MonoBehaviour
 
 
     public Interactable focus;
-
+    public Animator animator;
+    public bool pillIsActive;
+    public GameObject pillEffect;
+    public float pillEffectTime;
+    
+    public CinemachineVirtualCamera vcam;
     //public Collider playerCollider;
-
+    float pillFOV;
+    float soberFOV;
+    
     
 
     // Start is called before the first frame update
     void Start()
     {
+        soberFOV = 90f;
+        pillFOV = 60f;
         
+        pillIsActive = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
+        if (pillIsActive == true)
+        {
+            pillEffect.SetActive(true);
 
+            vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 2f;
+            vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 1f;
+            StartCoroutine(PillEffectRoutine());
+        }
+        else
+        {
+            vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.5f;
+            vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0.5f;
+        }
 
+        if (pillIsActive && vcam.m_Lens.FieldOfView > pillFOV)
+        {
 
+            vcam.m_Lens.FieldOfView -= 1;
+            
+            
+        }
+        if (!pillIsActive & vcam.m_Lens.FieldOfView < soberFOV)
+        {
 
-
-        //if (Input.GetMouseButtonDown(0))
-        //{
-            //create ray
-        //    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        //    RaycastHit hit;
-
-            //if the ray hits
-        //    if (Physics.Raycast(ray, out hit, 100))
-        //    {
-        //        Interactable interactable = hit.collider.GetComponent<Interactable>();
-
-        //        if(interactable != null)
-         //       {
-        //            SetFocus(interactable);
-        //            Debug.Log("FocusSet");
-        //        }
-
-        //    }
-        //}
-
-
-        //if (Input.GetMouseButtonDown(1))
-        //{
-            //create ray
-         //   Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-         //   RaycastHit hit;
-
-            //if the ray hits
-          //  if (Physics.Raycast(ray, out hit, 100))
-          //  {
-          //      Interactable interactable = hit.collider.GetComponent<Interactable>();
-
-          //      if (interactable != null)
-          //      {
-          //          RemoveFocus();
-          //          Debug.Log("Focus removed");
-          //     }
-
-          //  }
-        //}
+            vcam.m_Lens.FieldOfView += 1;
+            
+            
+        }
+        
 
 
 
@@ -128,5 +124,19 @@ public class PlayerController : MonoBehaviour
             focus.OnDefocused();
         }
         focus = null;
+    }
+
+    private void OnDisable()
+    {
+        pillEffect.SetActive(false);
+        pillIsActive = false;
+    }
+    IEnumerator PillEffectRoutine()
+    {
+        yield return new WaitForSeconds(pillEffectTime);
+        pillIsActive = false;
+        pillEffect.SetActive(false);
+
+
     }
 }

@@ -2,10 +2,13 @@
 using System;
 using UnityEngine;
 
+
 public class TestInteract : MonoBehaviour
 {
     public Animator m_Animator;
     public GameObject pushText;
+    public GameObject paintingShade;
+    public PlayerController player;
     public bool isOne;
     public float myCurrentNumber;
 
@@ -16,9 +19,15 @@ public class TestInteract : MonoBehaviour
     public bool isPaintingE;
 
     bool interactable;
+
+    private void Start()
+    {
+        
+        SetToOne();
+    }
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("MainCamera"))
+        if(other.CompareTag("MainCamera") && player.pillIsActive)
         {
             pushText.SetActive(true);
             interactable = true;
@@ -44,13 +53,16 @@ public class TestInteract : MonoBehaviour
                 StartInteract();
             }
         }
+        if(player.pillIsActive)
+        {
+            paintingShade.SetActive(false);
+        }
+        else
+        {
+            paintingShade.SetActive(true);
+        }
     }
-    //public override void Interact()
-    //{
-    //    base.Interact();
 
-    //    StartInteract();
-    //}
 
     private void StartInteract()
     {

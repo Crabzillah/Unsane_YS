@@ -20,6 +20,7 @@ public class Door : MonoBehaviour
     #endregion
 
     public Animator doorAnimator;
+    public GameObject lockedDoor;
     public float humanSum;
     public float neededSum;
 
@@ -38,9 +39,10 @@ public class Door : MonoBehaviour
     void Update()
     {
         float humanSum = paintingAIndex + paintingBIndex + paintingCIndex + paintingDIndex + paintingEIndex;
-        if (humanSum >= neededSum)
+        if (humanSum == neededSum)
         {
             doorAnimator.SetTrigger("Open");
+            lockedDoor.SetActive(true);
         }
     }
 }

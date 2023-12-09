@@ -35,6 +35,7 @@ public class Inventory : MonoBehaviour
     
 
     public bool haveKey = false;
+    public bool haveElevatorKey = false;
 
     public bool inventoryActive = false;
 
@@ -71,7 +72,7 @@ public class Inventory : MonoBehaviour
         foreach (Item item in items)
         {
             Debug.Log("check for key foreach STARTED");
-            if (item.name == "Key")
+            if (item.name == "RoomKey")
             {
                 Debug.Log("Found key in Inventory");
                 haveKey = true;
@@ -85,11 +86,11 @@ public class Inventory : MonoBehaviour
         foreach (Item item in items)
         {
             Debug.Log("check for key foreach STARTED");
-            if (item.name == "RoomKey")
+            if (item.name == "ElevatorKey")
             {
                 Debug.Log("Found Elevator key in Inventory");
-                haveKey = true;
-                Debug.Log("Have Key set to:" + Inventory.instance.haveKey);
+                haveElevatorKey = true;
+                Debug.Log("Have Key set to:" + Inventory.instance.haveElevatorKey);
 
             }
         }

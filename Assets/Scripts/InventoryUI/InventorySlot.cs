@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,10 @@ public class InventorySlot : MonoBehaviour
     public GameObject pillText;
     public GameObject roomKeyText;
     public GameObject elevatorKeyText;
+
+    public GameObject player;
+
+    
 
     Item item; //this variable will keep track of the current item in the slot
 
@@ -66,6 +71,7 @@ public class InventorySlot : MonoBehaviour
                 roomKeyText.SetActive(false);
                 elevatorKeyText.SetActive(false);
 
+
             }
             if (item.name == "Pill")
             {
@@ -76,7 +82,8 @@ public class InventorySlot : MonoBehaviour
                 fileText.SetActive(false);
                 roomKeyText.SetActive(false);
                 elevatorKeyText.SetActive(false);
-
+                player.GetComponent<PlayerController>().pillIsActive = true;
+                Inventory.instance.Remove(item);
             }
             if (item.name == "RoomKey")
             {
@@ -100,6 +107,10 @@ public class InventorySlot : MonoBehaviour
         }
     }
 
+    
+
+    
+  
 
 
 }

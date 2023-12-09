@@ -57,7 +57,7 @@ public class Elevator : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.F))
             {
-                if(!Inventory.instance.haveKey && !isInRoutine)
+                if(!Inventory.instance.haveElevatorKey && !isInRoutine)
                 {
                     needKeyText.SetActive(true);
                     isInRoutine = true;
@@ -66,7 +66,7 @@ public class Elevator : MonoBehaviour
                     callElevatorText.SetActive(false);
                     StartCoroutine(showText());
                 }
-                else if (Inventory.instance.haveKey)
+                else if (Inventory.instance.haveElevatorKey)
                 {
                     animator.SetTrigger("Open");
                     elevatorCalled = true;

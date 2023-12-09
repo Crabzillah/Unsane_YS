@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\Door.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\SecretDoor.cs" />
     <Compile Include="Assets\Scripts\Items\ItemUser.cs" />
     <Compile Include="Assets\Scripts\Player\HidingPlayerController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\TestInteract.cs" />

@@ -9,28 +9,23 @@ public class doorInteract : MonoBehaviour
     public GameObject openText;
     public bool doorIsOpen;
     bool interactable;
-    //public float doorCloseTimer;
-    // Start is called before the first frame update
+    
+    
     private void Start()
     {
         doorIsOpen = false;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        //if (other.CompareTag("Enemy") && enemy.chasing)
-        //{
-        //    animator.ResetTrigger("Close");
-        //    animator.SetTrigger("FastOpen");
-        //    doorIsOpen = true;
-            
-        //}
-    }
+    
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("MainCamera"))
+        if (other.CompareTag("MainCamera") && !enemy.isInDeathRoutine)
         {
             openText.SetActive(true);
             interactable = true;
+        }
+        else
+        {
+            openText.SetActive(false);
         }
         
     }
@@ -57,11 +52,7 @@ public class doorInteract : MonoBehaviour
     }
     void Update()
     {
-        //if (doorIsOpen == true)
-        //{
-        //    Debug.Log("DOOROPEN IS TRUE! - TRY COROUTINE");
-        //    StartCoroutine(CloseDoor());
-        //}
+
        
         if (interactable == true)
         {
@@ -94,16 +85,6 @@ public class doorInteract : MonoBehaviour
         doorIsOpen = true;
     }
 
-    //IEnumerator CloseDoor()
-    //{
-    //    animator.ResetTrigger("OpenDoor");
-
-    //    Debug.Log("START TO COUNT FAIT FOR SECONDS");
-    //    yield return new WaitForSeconds(doorCloseTimer);
-        
-    //    animator.SetTrigger("DoorClose");
-    //    doorIsOpen = false;
-        
-    //}
+    
      
 }
