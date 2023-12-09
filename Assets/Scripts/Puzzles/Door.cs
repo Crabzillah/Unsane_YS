@@ -21,11 +21,13 @@ public class Door : MonoBehaviour
 
     public Animator doorAnimator;
     public float humanSum;
+    public float neededSum;
 
-    public float paintingAindex;
-    public float paintingBindex;
-    public float paintingCindex;
-    public float paintingDindex;
+    public float paintingAIndex;
+    public float paintingBIndex;
+    public float paintingCIndex;
+    public float paintingDIndex;
+    public float paintingEIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +37,10 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float humanSum = paintingAindex + paintingBindex + paintingCindex + paintingDindex;
-        if (humanSum >= 4f)
+        float humanSum = paintingAIndex + paintingBIndex + paintingCIndex + paintingDIndex + paintingEIndex;
+        if (humanSum >= neededSum)
         {
-            doorAnimator.SetTrigger("OpenDoor");
+            doorAnimator.SetTrigger("Open");
         }
     }
 }
