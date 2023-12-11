@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public AudioClip newTrack;
     // Start is called before the first frame update
     public void PlayGame()
     {
@@ -15,5 +16,15 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void StartButtonPress()
+    {
+        AudioManager.instance.SwapTrack(newTrack);
+    }
+
+    public void BackToStartMenu()
+    {
+        AudioManager.instance.IsBackToStart();
     }
 }

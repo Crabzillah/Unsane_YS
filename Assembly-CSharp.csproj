@@ -74,6 +74,7 @@
     <Compile Include="Assets\InputSystem\StarterAssetsInputs.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\AmbientHalls.cs" />
     <Compile Include="Assets\Scripts\Items\ItemPickup.cs" />
     <Compile Include="Assets\noteSlide.cs" />
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Assets\Scripts\Puzzles\PaintingRot.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
     <Compile Include="Assets\Scripts\InventoryUI\InventorySlot.cs" />
+    <Compile Include="Assets\AudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
