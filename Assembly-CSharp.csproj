@@ -53,7 +53,7 @@
     <UnityVersion>2022.3.7f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="D:\Microsoft Visual Studio\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.7f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.7f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -61,42 +61,41 @@
     <Compile Include="Assets\Scripts\Puzzles\KeyDoor.cs" />
     <Compile Include="Assets\Scripts\Items\Interactable.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />
+    <Compile Include="Assets\ElevatorButton.cs" />
     <Compile Include="Assets\Scripts\Puzzles\Painting.cs" />
+    <Compile Include="Assets\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\AI\enemyAI.cs" />
+    <Compile Include="Assets\doorInteract.cs" />
+    <Compile Include="Assets\Elevator.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\InventoryUI\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
+    <Compile Include="Assets\pillEvent.cs" />
     <Compile Include="Assets\InputSystem\StarterAssetsInputs.cs" />
-    <Compile Include="Assets\Scripts\SFX\AmbientHalls.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\AmbientHalls.cs" />
     <Compile Include="Assets\Scripts\Items\ItemPickup.cs" />
+    <Compile Include="Assets\noteSlide.cs" />
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\Door.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
     <Compile Include="Assets\Scripts\Puzzles\SecretDoor.cs" />
-    <Compile Include="Assets\Scripts\Player\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Items\ItemUser.cs" />
-    <Compile Include="Assets\Scripts\DoorsElevator\Elevator.cs" />
     <Compile Include="Assets\Scripts\Player\HidingPlayerController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\TestInteract.cs" />
     <Compile Include="Assets\Scripts\InventoryUI\Inventory.cs" />
     <Compile Include="Assets\Scripts\AI\hidingPlace.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
     <Compile Include="Assets\lean.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Player\BedAnimation.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
-    <Compile Include="Assets\Scripts\Player\pillEvent.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\MainMenu.cs" />
+    <Compile Include="Assets\BedAnimation.cs" />
     <Compile Include="Assets\Scripts\roomDetector.cs" />
-    <Compile Include="Assets\Scripts\DoorsElevator\doorInteract.cs" />
     <Compile Include="Assets\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\Scripts\Puzzles\PaintingRot.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\ButtonsSFX.cs" />
-    <Compile Include="Assets\Scripts\Items\noteSlide.cs" />
     <Compile Include="Assets\Scripts\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
-    <Compile Include="Assets\Scripts\DoorsElevator\ElevatorButton.cs" />
     <Compile Include="Assets\Scripts\InventoryUI\InventorySlot.cs" />
+    <Compile Include="Assets\AudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
