@@ -6,7 +6,8 @@ public class InventoryUI : MonoBehaviour
 
     public Transform itemsParent;
     public GameObject inventoryUI;
-
+    public AudioSource soundSource;
+    public AudioClip inventorySound;
     
 
    // public GameObject player;
@@ -35,6 +36,7 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            PlaySound();
             if (PauseMenu.isPaused == false)
             {
                 inventoryUI.SetActive(!inventoryUI.activeSelf);
@@ -70,5 +72,10 @@ public class InventoryUI : MonoBehaviour
         }
 
         Debug.Log("Updating UI");
-    }    
+    }
+    
+    public void PlaySound()
+    {
+        soundSource.PlayOneShot(inventorySound);
+    }
 }
