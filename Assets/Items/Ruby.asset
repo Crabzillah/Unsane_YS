@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ruby
   m_EditorClassIdentifier: 
   name: Red Ruby
-  icon: {fileID: 21300000, guid: 8775281f11c8c964794c490888e7494c, type: 3}
+  icon: {fileID: 21300000, guid: e9f3a7a16ced627478765e6827aa1498, type: 3}
   isDefaultItem: 0

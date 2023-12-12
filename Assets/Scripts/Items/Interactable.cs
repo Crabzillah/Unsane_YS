@@ -45,6 +45,7 @@ public class Interactable : MonoBehaviour
                     Debug.Log("INTERACTION DONE");
                     Interact();
                     hasInteracted = true;
+                    pickUpIndicator.SetActive(false);
                 }
 
                 hasInteracted = false;
@@ -55,6 +56,7 @@ public class Interactable : MonoBehaviour
         {
             Interact();
             hasInteracted = true;
+            pickUpIndicator.SetActive(false);
         }
     }
 

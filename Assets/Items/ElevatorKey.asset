@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ElevatorKey
   m_EditorClassIdentifier: 
   name: ElevatorKey
-  icon: {fileID: 21300000, guid: c155b3d88e497564c9a45312b4b3c62d, type: 3}
+  icon: {fileID: 21300000, guid: 45a1e7898b73b6d4f83d7074cc47c2be, type: 3}
   isDefaultItem: 0
