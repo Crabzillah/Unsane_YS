@@ -9,6 +9,8 @@ public class TestInteract : MonoBehaviour
     public GameObject pushText;
     public GameObject paintingShade;
     public PlayerController player;
+    public AudioSource audioSource;
+    public AudioClip spinSFX;
     public bool isOne;
     public float myCurrentNumber;
 
@@ -67,7 +69,7 @@ public class TestInteract : MonoBehaviour
     private void StartInteract()
     {
 
-
+        audioSource.PlayOneShot(spinSFX);
         Debug.Log("TEST SUBJECT INTERACTED ");
         if (!isOne)
         {
