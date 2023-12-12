@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ItemPickup : Interactable
 {
-
+    public AudioSource audioSource;
+    public AudioClip pickUpSFX;
     public Item item;
     public override void Interact()
     {
         base.Interact();
 
         PickUp();
+        audioSource.PlayOneShot(pickUpSFX);
     }
 
     private void PickUp()

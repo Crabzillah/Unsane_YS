@@ -9,6 +9,8 @@ public class doorInteract : MonoBehaviour
     public GameObject openText;
     public AudioSource audioSource;
     public AudioClip openSFX;
+    public AudioClip closeSFX;
+    
     public bool doorIsOpen;
     bool interactable;
     
@@ -63,6 +65,7 @@ public class doorInteract : MonoBehaviour
                 if (doorIsOpen == false)
                 {
                     Open();
+                    
                     audioSource.PlayOneShot(openSFX);
                 }
             }
@@ -86,6 +89,11 @@ public class doorInteract : MonoBehaviour
         animator.ResetTrigger("Close");
         animator.SetTrigger("Open");
         doorIsOpen = true;
+    }
+    
+    public void PlayCloseSound()
+    {
+        audioSource.PlayOneShot(closeSFX);
     }
 
     

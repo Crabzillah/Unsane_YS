@@ -7,26 +7,32 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Camera cam;
 
-
+    public Rigidbody rb;
     public Interactable focus;
     public Animator animator;
     public bool pillIsActive;
     public GameObject pillEffect;
     public float pillEffectTime;
-    
+
+    public GameObject walkSFX;
+
     public CinemachineVirtualCamera vcam;
     //public Collider playerCollider;
     float pillFOV;
     float soberFOV;
-    
-    
+
+    public bool playerIsMoving;
+
+    Vector3 lastPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerIsMoving = false;
+        rb = GetComponent<Rigidbody>();
         soberFOV = 90f;
         pillFOV = 60f;
-        
+
         pillIsActive = false;
     }
 
@@ -55,19 +61,36 @@ public class PlayerController : MonoBehaviour
         {
 
             vcam.m_Lens.FieldOfView -= 1;
-            
-            
+
+
         }
         if (!pillIsActive & vcam.m_Lens.FieldOfView < soberFOV)
         {
 
             vcam.m_Lens.FieldOfView += 1;
-            
-            
+
+
         }
-        
+
+        if (gameObject.transform.position != lastPos)
+        {
+            Debug.Log("Velocity is "+rb.velocity);
+            if (!playerIsMoving)
+            {
+                playerIsMoving = true;
+                walkSFX.SetActive(true);
+
+            }
 
 
+        }
+        else
+        {
+            playerIsMoving = false;
+            walkSFX.SetActive(false);
+        }
+
+        lastPos = gameObject.transform.position;
 
     }
 

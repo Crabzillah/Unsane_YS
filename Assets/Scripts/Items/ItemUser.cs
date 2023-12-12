@@ -58,6 +58,7 @@ public class ItemUser : Interactable
                     pickUpIndicator.SetActive(false);
                     Inventory.instance.RemoveRuby();
                     canInteract = false;
+                    audioSource.PlayOneShot(drawerSFX);
                 }
 
                 

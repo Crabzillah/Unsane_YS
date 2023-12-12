@@ -81,7 +81,17 @@ PrefabInstance:
     - target: {fileID: -2700831610035412421, guid: 56725fc5a189eda4b88f3ae82fa490e1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 89.98021
+      value: 83.994446
+      objectReference: {fileID: 0}
+    - target: {fileID: -2700831610035412421, guid: 56725fc5a189eda4b88f3ae82fa490e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 22.501976
+      objectReference: {fileID: 0}
+    - target: {fileID: -2700831610035412421, guid: 56725fc5a189eda4b88f3ae82fa490e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 22.501976
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 56725fc5a189eda4b88f3ae82fa490e1,
         type: 3}
@@ -161,6 +171,9 @@ MonoBehaviour:
   animator: {fileID: 1621375442900935594}
   enemy: {fileID: 0}
   openText: {fileID: 0}
+  audioSource: {fileID: 0}
+  openSFX: {fileID: 0}
+  closeSFX: {fileID: 0}
   doorIsOpen: 0
 --- !u!65 &3435843444287351255
 BoxCollider:

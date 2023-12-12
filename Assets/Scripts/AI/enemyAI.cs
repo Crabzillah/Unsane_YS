@@ -11,6 +11,7 @@ public class enemyAI : MonoBehaviour
     public Animator aiAnimator;
     public AudioSource audioSource;
     public AudioClip AggroSFX;
+    public GameObject AggroSound;
     public float walkSpeed, chaseSpeed, minIdleTime, maxIdleTime,idleTime, detectionDistance, catchDistance, searchDistance, minSearchTime, maxSearchTime, minChaseTime, maxChaseTime, jumpscareTime;
     public bool walking, chasing, searching;
     public Transform player;
@@ -74,7 +75,8 @@ public class enemyAI : MonoBehaviour
 
                 chasing = true;
                 searching = false;
-                audioSource.PlayOneShot(AggroSFX);
+                
+                //audioSource.PlayOneShot(AggroSFX);
             }
         }
 
@@ -88,6 +90,7 @@ public class enemyAI : MonoBehaviour
             aiAnimator.ResetTrigger("idle");
             aiAnimator.ResetTrigger("search");
             aiAnimator.SetTrigger("sprint");
+            AggroSound.SetActive(true);
             if (aiDistance <= catchDistance)
             {
                 player.gameObject.SetActive(false);
