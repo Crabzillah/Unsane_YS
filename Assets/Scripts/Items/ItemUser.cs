@@ -8,6 +8,8 @@ public class ItemUser : Interactable
     public GameObject emptyText;
     public Transform spawnPoint;
     public Animator animator;
+    public AudioSource audioSource;
+    public AudioClip drawerSFX;
     //public Item item;
     public float rubiesTaken;
     public float rubiesNeeded;
@@ -75,6 +77,7 @@ public class ItemUser : Interactable
             pickUpIndicator.SetActive(false);
             Inventory.instance.RemoveRuby();
             canInteract = false;
+            audioSource.PlayOneShot(drawerSFX);
 
 
         }

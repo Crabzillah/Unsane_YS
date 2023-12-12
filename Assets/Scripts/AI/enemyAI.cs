@@ -9,7 +9,8 @@ public class enemyAI : MonoBehaviour
     public NavMeshAgent ai;
     public List<Transform> destinations;
     public Animator aiAnimator;
-
+    public AudioSource audioSource;
+    public AudioClip AggroSFX;
     public float walkSpeed, chaseSpeed, minIdleTime, maxIdleTime,idleTime, detectionDistance, catchDistance, searchDistance, minSearchTime, maxSearchTime, minChaseTime, maxChaseTime, jumpscareTime;
     public bool walking, chasing, searching;
     public Transform player;
@@ -73,6 +74,7 @@ public class enemyAI : MonoBehaviour
 
                 chasing = true;
                 searching = false;
+                audioSource.PlayOneShot(AggroSFX);
             }
         }
 

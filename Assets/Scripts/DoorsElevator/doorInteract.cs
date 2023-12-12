@@ -7,6 +7,8 @@ public class doorInteract : MonoBehaviour
     public Animator animator;
     public enemyAI enemy;
     public GameObject openText;
+    public AudioSource audioSource;
+    public AudioClip openSFX;
     public bool doorIsOpen;
     bool interactable;
     
@@ -61,6 +63,7 @@ public class doorInteract : MonoBehaviour
                 if (doorIsOpen == false)
                 {
                     Open();
+                    audioSource.PlayOneShot(openSFX);
                 }
             }
         }
