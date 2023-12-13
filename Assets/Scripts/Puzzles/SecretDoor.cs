@@ -8,6 +8,8 @@ public class SecretDoor : MonoBehaviour
     public enemyAI enemy;
     public GameObject openText;
     public GameObject needKeyText;
+    public AudioSource audioSource;
+    public AudioClip openSFX;
     public bool doorIsOpen;
     public bool playerHasKey;
     public float textShowTimer;
@@ -73,6 +75,7 @@ public class SecretDoor : MonoBehaviour
                     }
                     else if (Inventory.instance.haveKey)
                     {
+                        audioSource.PlayOneShot(openSFX);
                         Open();
                         openText.SetActive(false);
                     }

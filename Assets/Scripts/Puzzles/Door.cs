@@ -29,6 +29,9 @@ public class Door : MonoBehaviour
     public float paintingCIndex;
     public float paintingDIndex;
     public float paintingEIndex;
+
+    public AudioSource audioSource;
+    public AudioClip openSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +44,7 @@ public class Door : MonoBehaviour
         float humanSum = paintingAIndex + paintingBIndex + paintingCIndex + paintingDIndex + paintingEIndex;
         if (humanSum == neededSum)
         {
+            audioSource.PlayOneShot(openSFX);
             doorAnimator.SetTrigger("Open");
             lockedDoor.SetActive(true);
         }
