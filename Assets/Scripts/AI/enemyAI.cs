@@ -116,7 +116,7 @@ public class enemyAI : MonoBehaviour
         }
         if(walking == true)
         {
-            fpsController.MoveSpeed = 3f;
+            fpsController.MoveSpeed = 2f;
             dest = currentDest.position;
             ai.destination = dest;
             ai.speed = walkSpeed;

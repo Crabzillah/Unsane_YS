@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioSource;
 
     public GameObject walkSFX;
+    public GameObject sprintSFX;
 
+    public enemyAI enemy;
     public CinemachineVirtualCamera vcam;
     //public Collider playerCollider;
     float pillFOV;
@@ -89,7 +91,18 @@ public class PlayerController : MonoBehaviour
             if (!playerIsMoving)
             {
                 playerIsMoving = true;
-                walkSFX.SetActive(true);
+                if (enemy.chasing)
+                {
+                    walkSFX.SetActive(false);
+                    sprintSFX.SetActive(true);
+                    
+                }
+                else
+                {
+                    walkSFX.SetActive(true);
+                    sprintSFX.SetActive(false);
+                }
+                
 
             }
 
