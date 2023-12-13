@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public bool pillIsActive;
     public GameObject pillEffect;
     public float pillEffectTime;
+    public AudioSource audioSource;
 
     public GameObject walkSFX;
 
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     float soberFOV;
 
     public bool playerIsMoving;
+    public bool pillIsPlaying;
 
     Vector3 lastPos;
 
@@ -45,14 +47,23 @@ public class PlayerController : MonoBehaviour
         }
         if (pillIsActive == true)
         {
+
+            
             pillEffect.SetActive(true);
 
             vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 2f;
             vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 1f;
             StartCoroutine(PillEffectRoutine());
+            if (!pillIsPlaying)
+            {
+                audioSource.Play();
+                pillIsPlaying = true;
+            }
         }
         else
         {
+            
+            
             vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.5f;
             vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0.5f;
         }
@@ -149,16 +160,18 @@ public class PlayerController : MonoBehaviour
         focus = null;
     }
 
-    private void OnDisable()
-    {
-        pillEffect.SetActive(false);
-        pillIsActive = false;
-    }
+    //private void OnDisable()
+    //{
+    //    pillEffect.SetActive(false);
+    //    pillIsActive = false;
+    //}
     IEnumerator PillEffectRoutine()
     {
         yield return new WaitForSeconds(pillEffectTime);
         pillIsActive = false;
         pillEffect.SetActive(false);
+        audioSource.Stop();
+        pillIsPlaying = false;
 
 
     }

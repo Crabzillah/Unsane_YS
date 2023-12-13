@@ -3,29 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AmbientHalls : MonoBehaviour
-{   
-    public GameObject ambience;
-    public AudioSource audioSource;
+{
+    public AudioClip newTrack;
 
-    public bool isPlaying;
-
-    public float fadeTime;
+    public AudioSource stepVolume;
     // Start is called before the first frame update
     private void Start()
     {
-        isPlaying = false;
+        stepVolume.volume = 0.5f;
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
-            
-                
-                audioSource.volume = Mathf.Lerp(0.2f, 0, 10f);
-                isPlaying = false;
-                ambience.SetActive(false);
-
-            //FadeSound();
+            stepVolume.volume = 0.1f;
+            AudioManager.instance.ReturnToDefault();
         }
         
     }
@@ -33,23 +25,15 @@ public class AmbientHalls : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            ambience.SetActive(true);
-            audioSource.volume = Mathf.Lerp(0, 0.2f, 10f);
-                
-                isPlaying = true;
-            
-            
-            //FadeSound();
+            if (other.CompareTag("Player"))
+            {
+                stepVolume.volume = 0.3f;
+                AudioManager.instance.SwapTrack(newTrack);
+            }
         }
         
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     //private void FadeSound()
     //{

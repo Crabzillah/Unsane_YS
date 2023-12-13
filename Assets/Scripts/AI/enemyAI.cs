@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class enemyAI : MonoBehaviour
     public List<Transform> destinations;
     public Animator aiAnimator;
     public AudioSource audioSource;
-    public AudioClip AggroSFX;
+    public AudioClip AggroSFX, catchSFX;
     public GameObject AggroSound;
     public float walkSpeed, chaseSpeed, minIdleTime, maxIdleTime,idleTime, detectionDistance, catchDistance, searchDistance, minSearchTime, maxSearchTime, minChaseTime, maxChaseTime, jumpscareTime;
     public bool walking, chasing, searching;
@@ -19,7 +20,7 @@ public class enemyAI : MonoBehaviour
     Transform currentDest;
     Vector3 dest;
 
-
+    public FirstPersonController fpsController;
 
     public bool isInDeathRoutine;
 
@@ -31,6 +32,7 @@ public class enemyAI : MonoBehaviour
 
     private void Start()
     {
+        fpsController = fpsController.GetComponent<FirstPersonController>();
         walking = true;
         isInDeathRoutine = false;
         
@@ -60,6 +62,7 @@ public class enemyAI : MonoBehaviour
         }
         if(searching == true)
         {
+            
             ai.speed = 0;
             aiAnimator.ResetTrigger("walk");
             aiAnimator.ResetTrigger("idle");
@@ -83,6 +86,8 @@ public class enemyAI : MonoBehaviour
 
         if(chasing == true)
         {
+            fpsController.MoveSpeed = 4f;
+
             dest = player.position;
             ai.destination = dest;
             ai.speed = chaseSpeed;
@@ -93,6 +98,8 @@ public class enemyAI : MonoBehaviour
             AggroSound.SetActive(true);
             if (aiDistance <= catchDistance)
             {
+                AggroSound.SetActive(false);
+                audioSource.PlayOneShot(catchSFX);
                 player.gameObject.SetActive(false);
                 aiAnimator.ResetTrigger("walk");
                 aiAnimator.ResetTrigger("idle");
@@ -109,6 +116,7 @@ public class enemyAI : MonoBehaviour
         }
         if(walking == true)
         {
+            fpsController.MoveSpeed = 3f;
             dest = currentDest.position;
             ai.destination = dest;
             ai.speed = walkSpeed;

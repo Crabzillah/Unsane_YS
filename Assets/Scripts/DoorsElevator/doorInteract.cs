@@ -93,7 +93,9 @@ public class doorInteract : MonoBehaviour
     
     public void PlayCloseSound()
     {
-        audioSource.PlayOneShot(closeSFX);
+        AudioSource closeAudioSource = GetComponentInChildren<AudioSource>();
+        closeAudioSource.PlayOneShot(closeSFX);
+        //audioSource.PlayOneShot(closeSFX);
     }
 
     

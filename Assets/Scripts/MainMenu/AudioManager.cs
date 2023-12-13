@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
     public AudioClip defaultAmbience;
     
 
     public AudioSource track01, track02;
     private bool isPlayingTrack01;
 
-    public static AudioManager instance;
+    
     private void Awake()
     {
         if (instance == null)
@@ -18,8 +20,11 @@ public class AudioManager : MonoBehaviour
     }
     void Start()
     {
+        
         track01 = gameObject.AddComponent<AudioSource>();
         track02 = gameObject.AddComponent<AudioSource>();
+        track01.loop = true;
+        track02.loop = true;
         isPlayingTrack01 = true;
 
         SwapTrack(defaultAmbience);
@@ -35,14 +40,14 @@ public class AudioManager : MonoBehaviour
 
 
 
-    public void IsBackToStart()
+    public void ReturnToDefault()
     {
         SwapTrack(defaultAmbience);
     }
 
     private IEnumerator FadeTrack(AudioClip newClip)
     {
-        float timeToFade = 1f;
+        float timeToFade = 2f;
         float timeElapsed = 0;
         if (isPlayingTrack01)
         {

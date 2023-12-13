@@ -6,6 +6,8 @@ public class ElevatorButton : MonoBehaviour
 {
     public Animator animator;
     public GameObject useText;
+    public AudioSource audioSource;
+    public AudioClip closeElevator;
 
     bool interactable;
     bool buttonPushed;
@@ -34,6 +36,7 @@ public class ElevatorButton : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.F))
             {
+                audioSource.PlayOneShot(closeElevator);
                 animator.SetTrigger("Close");
                 useText.SetActive(false);
                 buttonPushed = true;

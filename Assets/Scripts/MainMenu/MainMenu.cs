@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public AudioClip newTrack;
     private bool startButtonPressed = false;
+
+    public float playTransitionTime;
     // Start is called before the first frame update
     public void PlayGame()
     {
@@ -26,7 +28,7 @@ public class MainMenu : MonoBehaviour
 
     public void BackToStartMenu()
     {
-        AudioManager.instance.IsBackToStart();
+        AudioManager.instance.ReturnToDefault();
     }
 
     private void Update()
@@ -38,7 +40,7 @@ public class MainMenu : MonoBehaviour
     }
     IEnumerator StartRoutine()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(playTransitionTime);
         SceneManager.LoadScene(1); // <----------- ADDED INDEX (2) INSTEAD IF (1)
 
     }

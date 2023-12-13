@@ -7,6 +7,9 @@ public class Elevator : MonoBehaviour
     public Animator animator;
     public GameObject callElevatorText;
     public GameObject needKeyText;
+    public AudioSource audioSource;
+    public AudioClip openElevator;
+    public AudioClip playFinalSound;
     public float textShowTimer;
 
     bool interactable;
@@ -59,6 +62,7 @@ public class Elevator : MonoBehaviour
             {
                 if(!Inventory.instance.haveElevatorKey && !isInRoutine)
                 {
+                    
                     needKeyText.SetActive(true);
                     isInRoutine = true;
 
@@ -68,6 +72,7 @@ public class Elevator : MonoBehaviour
                 }
                 else if (Inventory.instance.haveElevatorKey)
                 {
+                    audioSource.PlayOneShot(openElevator);
                     animator.SetTrigger("Open");
                     elevatorCalled = true;
                     callElevatorText.SetActive(false);
@@ -83,6 +88,11 @@ public class Elevator : MonoBehaviour
         needKeyText.SetActive(false);
         isInRoutine = false;
         elevatorCalled = false;
+    }
+
+    public void PlayFinalSound()
+    {
+        audioSource.PlayOneShot(playFinalSound);
     }
 
 }

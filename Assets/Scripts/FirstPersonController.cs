@@ -112,6 +112,7 @@ namespace StarterAssets
 
 		private void Update()
 		{
+			SprintSpeed = MoveSpeed; //deactivate sprint mechanic
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
