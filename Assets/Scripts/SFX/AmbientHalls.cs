@@ -10,7 +10,7 @@ public class AmbientHalls : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        stepVolume.volume = 0.5f;
+        stepVolume.volume = 0.35f;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -27,7 +27,7 @@ public class AmbientHalls : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                stepVolume.volume = 0.3f;
+                stepVolume.volume = 0.2f;
                 AudioManager.instance.SwapTrack(newTrack);
             }
         }

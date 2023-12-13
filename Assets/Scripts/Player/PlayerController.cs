@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
         if (gameObject.transform.position != lastPos)
         {
-            Debug.Log("Velocity is "+rb.velocity);
+            
             if (!playerIsMoving)
             {
                 playerIsMoving = true;
@@ -99,8 +99,9 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    walkSFX.SetActive(true);
                     sprintSFX.SetActive(false);
+                    walkSFX.SetActive(true);
+                    
                 }
                 
 
@@ -111,8 +112,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             playerIsMoving = false;
-            sprintSFX.SetActive(false);
+            
             walkSFX.SetActive(false);
+            sprintSFX.SetActive(false);
         }
 
         lastPos = gameObject.transform.position;
