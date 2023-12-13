@@ -101,7 +101,7 @@ public class enemyAI : MonoBehaviour
             {
                 AggroSoundTwo.SetActive(false);
                 AggroSound.SetActive(false);
-                
+                catchSFX.SetActive(true);
                 player.gameObject.SetActive(false);
                 aiAnimator.ResetTrigger("walk");
                 aiAnimator.ResetTrigger("idle");
