@@ -36,9 +36,10 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            PlaySound();
+            
             if (PauseMenu.isPaused == false)
             {
+                PlaySound();
                 inventoryUI.SetActive(!inventoryUI.activeSelf);
                 //make mouse visible.
                 if (inventoryUI.activeSelf == true)
@@ -48,6 +49,7 @@ public class InventoryUI : MonoBehaviour
                 }
                 else
                 {
+                    PlaySound();
                     Cursor.lockState = CursorLockMode.Locked;
                     inventory.inventoryActive = false;
 
@@ -76,6 +78,7 @@ public class InventoryUI : MonoBehaviour
     
     public void PlaySound()
     {
+        soundSource.volume = 0.5f;
         soundSource.PlayOneShot(inventorySound);
     }
 }

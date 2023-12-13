@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public AudioSource pauseFx;
     public AudioClip pauseMenuSound;
     public GameObject pauseMenu;
+    public GameObject inventoryUI;
     public static bool isPaused; //can make static and fix further bugs
     public GameObject player;
     
@@ -24,18 +25,32 @@ public class PauseMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            PlayPauseSound();
-            if(isPaused)
+            if (inventoryUI.activeSelf == true)
             {
-                ResumeGame();
+                PlayPauseSound();
                 
+                inventoryUI.SetActive(false);
+                Inventory.instance.inventoryActive = false;
+                Cursor.lockState = CursorLockMode.Locked;
             }
             else
             {
-                PauseGame();
+                PlayPauseSound();
+                if (isPaused)
+                {
+                    ResumeGame();
 
+                }
+                else
+                {
+                    PauseGame();
+
+                }
             }
+
         }
+
+
     }
 
     public void PauseGame()
@@ -53,12 +68,13 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-        
-        
+        Cursor.lockState = CursorLockMode.Locked;
+
+
 
     }
 
@@ -75,6 +91,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PlayPauseSound()
     {
+        pauseFx.volume = 0.5f;
         pauseFx.PlayOneShot(pauseMenuSound);
     }
 

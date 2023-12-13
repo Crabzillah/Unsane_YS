@@ -9,6 +9,8 @@ public class Interactable : MonoBehaviour
 
     public GameObject pickUpIndicator;
 
+    public GameObject alarmSource;
+
     public bool isFocus = false; //Is this interactable currently being focused?
     public Transform player; // reference to the player transform
 
@@ -19,6 +21,8 @@ public class Interactable : MonoBehaviour
     public bool isAutoPick = false;
 
     public bool canInteract = true;
+
+    public bool isAlarm = false;
     public virtual void Interact()
     {
         // This method is meant to be overwritten
@@ -46,6 +50,10 @@ public class Interactable : MonoBehaviour
                     Interact();
                     hasInteracted = true;
                     pickUpIndicator.SetActive(false);
+                    if(isAlarm)
+                    {
+                        alarmSource.SetActive(true);
+                    }
                 }
 
                 hasInteracted = false;

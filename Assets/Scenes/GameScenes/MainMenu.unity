@@ -6974,8 +6974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonsFx: {fileID: 1866426365}
   hoverFx: {fileID: 8300000, guid: eea17d2e24a20e346ad95fc211cfe67b, type: 3}
-  clickFx: {fileID: 8300000, guid: 2bae883c62aa14d40a4efbb67779509c, type: 3}
-  playFx: {fileID: 8300000, guid: 2bae883c62aa14d40a4efbb67779509c, type: 3}
+  clickFx: {fileID: 8300000, guid: 41af60b94c386f441adbead05d67e023, type: 3}
+  playFx: {fileID: 8300000, guid: 41af60b94c386f441adbead05d67e023, type: 3}
 --- !u!82 &1866426365
 AudioSource:
   m_ObjectHideFlags: 0

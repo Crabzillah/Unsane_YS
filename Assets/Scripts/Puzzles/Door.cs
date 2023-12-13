@@ -32,10 +32,11 @@ public class Door : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip openSFX;
+    public bool canPlaySFX;
     // Start is called before the first frame update
     void Start()
     {
-       
+        canPlaySFX = true;
     }
 
     // Update is called once per frame
@@ -43,10 +44,16 @@ public class Door : MonoBehaviour
     {
         float humanSum = paintingAIndex + paintingBIndex + paintingCIndex + paintingDIndex + paintingEIndex;
         if (humanSum == neededSum)
-        {
-            audioSource.PlayOneShot(openSFX);
+        {   
+            if(canPlaySFX)
+            {
+                audioSource.PlayOneShot(openSFX);
+                canPlaySFX = false;
+            }
+            
             doorAnimator.SetTrigger("Open");
             lockedDoor.SetActive(true);
+
         }
     }
 }
