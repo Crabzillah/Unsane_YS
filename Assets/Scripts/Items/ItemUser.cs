@@ -10,6 +10,7 @@ public class ItemUser : Interactable
     public Animator animator;
     public AudioSource audioSource;
     public AudioClip drawerSFX;
+    public AudioClip rubySFX;
     //public Item item;
     public float rubiesTaken;
     public float rubiesNeeded;
@@ -45,20 +46,23 @@ public class ItemUser : Interactable
             {
                 if (rubiesTaken != rubiesNeeded)
                 {
+                    audioSource.PlayOneShot(rubySFX);
                     rubiesTaken += 1;
                     Debug.Log("Rubies taken:" + rubiesTaken);
                     Inventory.instance.RemoveRuby();
+                    
 
                 }
                 else
                 {
+                    audioSource.PlayOneShot(drawerSFX);
                     animator.SetTrigger("Open");
                     objectToSpawn.SetActive(true);
                     //GameObject newObject = Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
                     pickUpIndicator.SetActive(false);
                     Inventory.instance.RemoveRuby();
                     canInteract = false;
-                    audioSource.PlayOneShot(drawerSFX);
+                    
                 }
 
                 

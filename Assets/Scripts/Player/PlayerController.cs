@@ -111,6 +111,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             playerIsMoving = false;
+            sprintSFX.SetActive(false);
             walkSFX.SetActive(false);
         }
 
