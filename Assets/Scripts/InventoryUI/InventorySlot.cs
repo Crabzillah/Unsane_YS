@@ -13,6 +13,7 @@ public class InventorySlot : MonoBehaviour
     public GameObject roomKeyText;
     public GameObject elevatorKeyText;
     public GameObject recordFileText;
+    public GameObject paintingFileText;
 
 
 
@@ -71,6 +72,20 @@ public class InventorySlot : MonoBehaviour
 
                 fileText.SetActive(!fileText.activeInHierarchy); // activate/deactivate ruby description text panel
                 recordFileText.SetActive(false);
+                pillText.SetActive(false);
+                rubyText.SetActive(false);
+                roomKeyText.SetActive(false);
+                elevatorKeyText.SetActive(false);
+
+
+            }
+            if (item.name == "PaintingFile")
+            {
+                item.Use();
+
+                paintingFileText.SetActive(!paintingFileText.activeInHierarchy); // activate/deactivate ruby description text panel
+                recordFileText.SetActive(false);
+                fileText.SetActive(false);
                 pillText.SetActive(false);
                 rubyText.SetActive(false);
                 roomKeyText.SetActive(false);

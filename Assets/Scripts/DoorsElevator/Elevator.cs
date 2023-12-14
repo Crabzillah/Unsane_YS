@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Elevator : MonoBehaviour
 {
     public Animator animator;
     public GameObject callElevatorText;
     public GameObject needKeyText;
+    public GameObject finalShade;
     public AudioSource audioSource;
     public AudioClip openElevator;
     public AudioClip playFinalSound;
@@ -95,4 +97,13 @@ public class Elevator : MonoBehaviour
         audioSource.PlayOneShot(playFinalSound);
     }
 
+    public void FinalShade()
+    {
+        finalShade.SetActive(true);
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
