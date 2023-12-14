@@ -47,17 +47,17 @@ public class Elevator : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            animator.SetTrigger("Open");
-            elevatorCalled = true;
-            callElevatorText.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            animator.SetTrigger("Close");
+        //if(Input.GetKeyDown(KeyCode.O))
+        //{
+        //    animator.SetTrigger("Open");
+        //    elevatorCalled = true;
+        //    callElevatorText.SetActive(false);
+        //}
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    animator.SetTrigger("Close");
             
-        }
+        //}
         if (interactable == true)
         {
             if(Input.GetKeyDown(KeyCode.F))

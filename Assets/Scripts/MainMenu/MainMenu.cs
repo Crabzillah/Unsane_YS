@@ -10,6 +10,14 @@ public class MainMenu : MonoBehaviour
 
     public float playTransitionTime;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+    public void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void PlayGame()
     {
         startButtonPressed = true;
