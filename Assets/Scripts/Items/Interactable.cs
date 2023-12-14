@@ -4,7 +4,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
 
-    public float radius = 2f; // how close player needs to get to the object in order to interact with it
+    public float radius = 1f; // how close player needs to get to the object in order to interact with it
     public Transform interactionTransform; // Transform from where we interact
 
     public GameObject pickUpIndicator;
