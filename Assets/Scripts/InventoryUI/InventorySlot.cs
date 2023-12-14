@@ -59,6 +59,7 @@ public class InventorySlot : MonoBehaviour
 
                 rubyText.SetActive(!rubyText.activeInHierarchy); // activate/deactivate ruby description text panel
                 recordFileText.SetActive(false);
+                paintingFileText.SetActive(false);
                 fileText.SetActive(false);
                 pillText.SetActive(false);
                 roomKeyText.SetActive(false);
@@ -71,6 +72,7 @@ public class InventorySlot : MonoBehaviour
                 item.Use();
 
                 fileText.SetActive(!fileText.activeInHierarchy); // activate/deactivate ruby description text panel
+                paintingFileText.SetActive(false);
                 recordFileText.SetActive(false);
                 pillText.SetActive(false);
                 rubyText.SetActive(false);
@@ -99,6 +101,7 @@ public class InventorySlot : MonoBehaviour
 
                 recordFileText.SetActive(!fileText.activeInHierarchy); // activate/deactivate ruby description text panel
                 fileText.SetActive(false);
+                paintingFileText.SetActive(false);
                 pillText.SetActive(false);
                 rubyText.SetActive(false);
                 roomKeyText.SetActive(false);
@@ -112,6 +115,7 @@ public class InventorySlot : MonoBehaviour
 
                 pillText.SetActive(!pillText.activeInHierarchy); // activate/deactivate ruby description text panel
                 recordFileText.SetActive(false);
+                paintingFileText.SetActive(false);
                 rubyText.SetActive(false);
                 fileText.SetActive(false);
                 roomKeyText.SetActive(false);
@@ -124,6 +128,7 @@ public class InventorySlot : MonoBehaviour
                 item.Use();
                 roomKeyText.SetActive(!roomKeyText.activeInHierarchy); // activate/deactivate ruby description text panel
                 recordFileText.SetActive(false);
+                paintingFileText.SetActive(false);
                 rubyText.SetActive(false);
                 fileText.SetActive(false);
                 pillText.SetActive(false);
@@ -134,6 +139,7 @@ public class InventorySlot : MonoBehaviour
                 item.Use();
                 elevatorKeyText.SetActive(!elevatorKeyText.activeInHierarchy); // activate/deactivate ruby description text panel
                 recordFileText.SetActive(false);
+                paintingFileText.SetActive(false);
                 rubyText.SetActive(false);
                 fileText.SetActive(false);
                 pillText.SetActive(false);
